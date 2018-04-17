@@ -1,5 +1,5 @@
 {
-  "name": "@owstack/starter",
+  "name": "@owstack/ows-wallet-plugin-starter",
   "description": "An OWS Wallet plugin.",
   "author": "Open Wallet Stack",
   "version": "0.0.1",

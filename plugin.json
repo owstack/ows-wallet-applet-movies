@@ -1,6 +1,7 @@
 {
   "pluginId": "org.openwalletstack.ows-wallet.plugin.applet.starter",
   "type": "applet",
+  "name": "Starter",
   "mainViewUri": "index.html",
   "skins": [],
   "dependencies": {}

@@ -173,17 +173,9 @@ module.exports = function(grunt) {
     }
   });
 
-  function getName(pkg) {
-    var name = pkg.name.split('/')[pkg.name.split('/').length-1];
-    name = name.replace('-', ' ');
-    name = name.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-    return name;
-  };
-
   function releasePluginConfig() {
     var pkg = grunt.file.readJSON('package.json');
     var plugin = grunt.file.readJSON('plugin.json');
-    plugin.name = getName(pkg);
     plugin.version = pkg.version;
     plugin.description = pkg.description;
     plugin.author = pkg.author;
