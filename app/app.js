@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('helloApp', [
+angular.module('starterApp', [
 	'gettext',
 	'ionic',
 	'ngLodash',
 	'owsWalletPluginClient',
-  'helloApp.services',
-  'helloApp.controllers'
+  'starterApp.services',
+  'starterApp.controllers'
 ]);
 
-angular.module('helloApp.controllers', []);
-angular.module('helloApp.services', []);
+angular.module('starterApp.controllers', []);
+angular.module('starterApp.services', []);

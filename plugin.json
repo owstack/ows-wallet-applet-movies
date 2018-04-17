@@ -1,5 +1,5 @@
 {
-  "pluginId": "org.openwalletstack.ows-wallet.plugin.applet.hello",
+  "pluginId": "org.openwalletstack.ows-wallet.plugin.applet.starter",
   "type": "applet",
   "mainViewUri": "index.html",
   "skins": [],

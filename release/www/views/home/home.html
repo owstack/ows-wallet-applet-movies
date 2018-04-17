@@ -7,26 +7,26 @@
     <ion-nav-title class="applet-navbar-title">{{applet.title}}</ion-nav-title>
     <ion-nav-buttons side="left">
        <a class="button button-clear applet-navbar-button applet-icon-left ion-chevron-left"
-      	ng-click="hello.previous()" ng-show="hello.slideIndex > 0">Prev</a>
+      	ng-click="home.previous()" ng-show="home.slideIndex > 0">Prev</a>
     </ion-nav-buttons>
     <ion-nav-buttons side="right"> 
       <a class="button button-clear applet-navbar-button applet-icon-right ion-chevron-right"
-      	ng-click="hello.next()" ng-show="hello.slideIndex != 2">Next</a>
+      	ng-click="home.next()" ng-show="home.slideIndex != 2">Next</a>
     </ion-nav-buttons>
   </ion-nav-bar>
 
   <!-- Content -->
 	<ion-content class="applet-content has-header" ng-class="{'has-status-bar-and-header': env.hasStatusBar}">
 
-		<ion-slide-box class="applet-slide-box" on-slide-changed="hello.slideChanged(index)">
+		<ion-slide-box class="applet-slide-box" on-slide-changed="home.slideChanged(index)">
 		  <ion-slide>
-        <div ng-include="'views/page1.html'"></div>
+        <div ng-include="'views/page1/page1.html'"></div>
 		  </ion-slide>
 		  <ion-slide>
-        <div ng-include="'views/page2.html'"></div>
+        <div ng-include="'views/page2/page2.html'"></div>
 		  </ion-slide>
 		  <ion-slide>
-        <div ng-include="'views/page3.html'"></div>
+        <div ng-include="'views/page3/page3.html'"></div>
 		  </ion-slide>
 		</ion-slide-box>
 

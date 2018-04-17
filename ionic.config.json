@@ -1,4 +1,4 @@
 { 
-  "name": "Hello",
-  "app_id": "org.openwalletstack.ows-wallet.plugin.applet.hello"
+  "name": "Starter",
+  "app_id": "org.openwalletstack.ows-wallet.plugin.applet.starter"
 }

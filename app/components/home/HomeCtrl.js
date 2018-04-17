@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('helloApp.controllers').controller('HelloCtrl', function($scope, $rootScope, $log, $timeout, CContext, $ionicSlideBoxDelegate) {
+angular.module('starterApp.controllers').controller('HomeCtrl', function($scope, $rootScope, $log, $timeout, CContext, $ionicSlideBoxDelegate) {
 
   var self = this;
 

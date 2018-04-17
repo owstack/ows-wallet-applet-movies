@@ -1,7 +1,7 @@
-OWS Wallet Plugin - Hello
+OWS Wallet Plugin - Starter
 =======
 
-A sample OWS Wallet applet plugin.
+A minimal OWS Wallet applet plugin to get you started on your own plugin.
 
 ## Main Features
 
@@ -37,11 +37,13 @@ npm install
 grunt release
 ```
 
+The release/ directory contains the content consumed by the OWS Wallet and must be checked in.
+
 ## Support
 
-* [GitHub Issues](https://github.com/owstack/ows-wallet-plugin-hello/issues)
+* [GitHub Issues](https://github.com/owstack/ows-wallet-plugin-starter/issues)
   * Open an issue if you are having problems with this project
 
 ## License
 
-This plugin is released under the MIT License.  Please refer to the [LICENSE](https://github.com/owstack/ows-wallet-plugin-hello/blob/master/LICENSE) file that accompanies this project for more information including complete terms and conditions.
+This plugin is released under the MIT License.  Please refer to the [LICENSE](https://github.com/owstack/ows-wallet-plugin-starter/blob/master/LICENSE) file that accompanies this project for more information including complete terms and conditions.

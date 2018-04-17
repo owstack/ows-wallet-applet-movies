@@ -1,0 +1,12 @@
+{
+  "pluginId": "org.openwalletstack.ows-wallet.plugin.applet.starter",
+  "type": "applet",
+  "mainViewUri": "index.html",
+  "skins": [],
+  "dependencies": {},
+  "name": "Starter",
+  "version": "0.0.1",
+  "description": "An OWS Wallet plugin.",
+  "author": "Open Wallet Stack",
+  "date": "1523971255843"
+}

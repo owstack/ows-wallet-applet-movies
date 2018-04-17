@@ -7,7 +7,7 @@ module.exports = function(grunt) {
   // Project Configuration
   grunt.initConfig({
     exec: {
-      clear: {
+      clean: {
         command: 'rm -Rf bower_components node_modules'
       }
     },
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
     nggettext_compile: {
       all: {
         options: {
-          module: 'helloApp'
+          module: 'starterApp'
         },
         files: {
           'app/shared/translations/translations.js': ['i18n/po/*.po']
@@ -138,8 +138,7 @@ module.exports = function(grunt) {
         flatten: false,
         cwd: '',
         src: [
-          'www/**/*',
-          'applet.json'
+          'www/**/*'
         ],
         dest: 'release'
       },
@@ -174,6 +173,21 @@ module.exports = function(grunt) {
     }
   });
 
+  function releasePluginConfig() {
+    var pkg = grunt.file.readJSON('package.json');
+    var plugin = grunt.file.readJSON('plugin.json');
+    plugin.name = pkg.name;
+    plugin.version = pkg.version;
+    plugin.description = pkg.description;
+    plugin.author = pkg.author;
+    plugin.date = Date.now().toString();
+    grunt.file.write('release/plugin.json', JSON.stringify(plugin, null, 2));
+  };
+
+  grunt.registerTask('releasePluginConfig', 'Create the release plugin configuration.', function() {
+    releasePluginConfig();
+  });
+
   grunt.registerTask('default', [
     'sass',
     'concat:app_js',
@@ -192,7 +206,8 @@ module.exports = function(grunt) {
     'copy:plugin_client_css',
     'uglify',
     'clean:release',
-    'copy:release'
+    'copy:release',
+    'releasePluginConfig'
   ]);
 
   grunt.registerTask('translate', ['nggettext_extract']);

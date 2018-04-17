@@ -1,5 +1,5 @@
 {
-  "name": "Hello",
+  "name": "Starter",
   "description": "An OWS Wallet plugin.",
   "author": "Open Wallet Stack",
   "version": "0.0.1",
@@ -12,11 +12,11 @@
   "homepage": "https://openwalletstack.org",
   "license": "MIT",
   "repository": {
-    "url": "git://github.com/owstack/ows-wallet-plugin-hello.git",
+    "url": "git://github.com/owstack/ows-wallet-plugin-starter.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/owstack/ows-wallet-plugin-hello/issues"
+    "url": "https://github.com/owstack/ows-wallet-plugin-starter/issues"
   },
   "dependencies": {
     "@owstack/ows-wallet-plugin-client": "^0.0.4",
