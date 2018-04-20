@@ -1,12 +1,45 @@
 {
-  "pluginId": "org.openwalletstack.ows-wallet.plugin.applet.starter",
-  "type": "applet",
+  "header": {
+    "id": "org.openwalletstack.wallet.plugin.applet.starter",
+    "type": "applet",
+    "name": "Starter",
+    "url": {
+      "marketing": "https://openwalletstack.org/",
+      "support": "https://github.com/owstack/ows-wallet/issues/new",
+      "privacy": "https://openwalletstack.org/disclaimer"
+    }
+  },
+  "permissions": {
+    "delete": false
+  },
+  "galleryImage": "<resource-0>",
+  "previewImage": "<resource-1>",
+  "store": {
+    "id": "0",
+    "rating": "4+",
+    "price": {
+      "amount": "0",
+      "currency": "USD"
+    },
+    "category": {
+      "primary": "General",
+      "secondary": "OWS"
+    },
+    "keywords": [
+      "ows",
+      "plugin"
+    ]
+  },
+  "resources": [
+    "<theme-path>/gallery.png",
+    "<theme-path>/preview.png",
+    "<theme-path>/sidebar-left.png",
+    "<theme-path>/sidebar-right.png"
+  ],
   "mainViewUri": "index.html",
   "skins": [],
   "dependencies": {},
-  "name": "Starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An OWS Wallet plugin.",
-  "author": "Open Wallet Stack",
-  "date": "1523972285367"
+  "author": "Open Wallet Stack"
 }
