@@ -176,9 +176,9 @@ module.exports = function(grunt) {
   function releasePluginConfig() {
     var pkg = grunt.file.readJSON('package.json');
     var plugin = grunt.file.readJSON('plugin.json');
-    plugin.version = pkg.version;
-    plugin.description = pkg.description;
-    plugin.author = pkg.author;
+    plugin.header.version = pkg.version;
+    plugin.header.description = pkg.description;
+    plugin.header.author = pkg.author;
     grunt.file.write('release/plugin.json', JSON.stringify(plugin, null, 2));
   };
 
