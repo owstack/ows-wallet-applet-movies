@@ -179,7 +179,6 @@ module.exports = function(grunt) {
     plugin.version = pkg.version;
     plugin.description = pkg.description;
     plugin.author = pkg.author;
-    plugin.date = Date.now().toString();
     grunt.file.write('release/plugin.json', JSON.stringify(plugin, null, 2));
   };
 
