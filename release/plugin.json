@@ -7,7 +7,10 @@
       "marketing": "https://openwalletstack.org/",
       "support": "https://github.com/owstack/ows-wallet/issues/new",
       "privacy": "https://openwalletstack.org/disclaimer"
-    }
+    },
+    "version": "0.0.6",
+    "description": "An OWS Wallet plugin.",
+    "author": "Open Wallet Stack"
   },
   "permissions": {
     "delete": false
@@ -36,8 +39,5 @@
   ],
   "mainViewUri": "index.html",
   "skins": [],
-  "dependencies": {},
-  "version": "0.0.4",
-  "description": "An OWS Wallet plugin.",
-  "author": "Open Wallet Stack"
+  "dependencies": {}
 }
