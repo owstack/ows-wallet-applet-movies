@@ -31,15 +31,13 @@
     ]
   },
   "resources": [
-    "<theme-path>/gallery.png",
-    "<theme-path>/preview.png",
-    "<theme-path>/sidebar-left.png",
-    "<theme-path>/sidebar-right.png"
+    "<plugin-path>/gallery.png",
+    "<plugin-path>/preview.png"
   ],
   "mainViewUri": "index.html",
   "skins": [],
   "dependencies": {},
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "An OWS Wallet plugin.",
   "author": "Open Wallet Stack"
 }
