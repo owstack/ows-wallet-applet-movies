@@ -58,10 +58,10 @@ module.exports = function(grunt) {
           flatten: false,
           cwd: 'app/skins/',
           src: ['**/main.scss'],
-          dest: 'www/css/skins/',
+          dest: 'www/skins/',
           ext: '.css',
           rename: function (dest, src) {
-            return dest + src.replace('/sass', '');
+            return dest + src.replace('/sass', '/css');
           }
         }]
       }
@@ -156,7 +156,7 @@ module.exports = function(grunt) {
         expand: true,
         flatten: false,
         cwd: 'app/skins',
-        src: '**/*',
+        src: ['**/*', '!**/sass/**'], // Don't bring sass files into the app
         dest: 'www/skins/'
       },
       release: {

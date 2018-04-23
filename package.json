@@ -2,7 +2,7 @@
   "name": "@owstack/ows-wallet-plugin-starter",
   "description": "An OWS Wallet plugin.",
   "author": "Open Wallet Stack",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "keywords": [
     "ows",
     "ows wallet",
