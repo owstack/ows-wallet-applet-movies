@@ -1,7 +1,7 @@
 {
   "header": {
 	  "id": "org.openwalletstack.wallet.plugin.applet.starter",
-	  "type": "applet",
+	  "kind": "applet",
 	  "name": "Starter",
     "url": {
       "marketing": "https://openwalletstack.org/",
