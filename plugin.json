@@ -14,7 +14,7 @@
   },
   "galleryImage": "<resource-0>",
   "previewImage": "<resource-1>",
-  "IconImage": "<resource-2>",
+  "iconImage": "<resource-2>",
   "splashImage": "<resource-3>",
   "store": {
     "id": "0",
@@ -38,7 +38,7 @@
     "<plugin-path>/img/icon.png",
     "<plugin-path>/img/splash.png"
   ],
-  "mainViewUri": "index.html",
+  "mainView": "index.html",
   "skins": {
     "org.openwalletstack.wallet.skin.applet.starter.default": {"default": true}
   },
