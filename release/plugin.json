@@ -17,6 +17,8 @@
   },
   "galleryImage": "<resource-0>",
   "previewImage": "<resource-1>",
+  "IconImage": "<resource-2>",
+  "splashImage": "<resource-3>",
   "store": {
     "id": "0",
     "rating": "4+",
@@ -34,10 +36,16 @@
     ]
   },
   "resources": [
-    "<plugin-path>/gallery.png",
-    "<plugin-path>/preview.png"
+    "<plugin-path>/img/gallery.png",
+    "<plugin-path>/img/preview.png",
+    "<plugin-path>/img/icon.png",
+    "<plugin-path>/img/splash.png"
   ],
   "mainViewUri": "index.html",
-  "skins": [],
+  "skins": {
+    "org.openwalletstack.wallet.skin.applet.starter.default": {
+      "default": true
+    }
+  },
   "dependencies": {}
 }

@@ -1,8 +1,11 @@
 {
   "header": {
-	  "id": "org.openwalletstack.wallet.plugin.applet.starter",
-	  "type": "applet",
-	  "name": "Starter",
+    "name": "default",
+    "id": "org.openwalletstack.wallet.skin.applet.starter.default",
+    "kind": "applet",
+    "description": "A Starter applet skin.",
+    "author": "Open Wallet Stack",
+    "version": "0.0.1",
     "url": {
       "marketing": "https://openwalletstack.org/",
       "support": "https://github.com/owstack/ows-wallet/issues/new",
@@ -14,8 +17,6 @@
   },
   "galleryImage": "<resource-0>",
   "previewImage": "<resource-1>",
-  "IconImage": "<resource-2>",
-  "splashImage": "<resource-3>",
   "store": {
     "id": "0",
     "rating": "4+",
@@ -29,18 +30,11 @@
     },
     "keywords": [
       "ows",
-      "plugin"
+      "skin"
     ]
   },
   "resources": [
-    "<plugin-path>/img/gallery.png",
-    "<plugin-path>/img/preview.png",
-    "<plugin-path>/img/icon.png",
-    "<plugin-path>/img/splash.png"
-  ],
-  "mainViewUri": "index.html",
-  "skins": {
-    "org.openwalletstack.wallet.skin.applet.starter.default": {"default": true}
-  },
-  "dependencies": {}
+    "<skin-path>/img/gallery.png",
+    "<skin-path>/img/preview.png"
+  ]
 }

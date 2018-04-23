@@ -33,7 +33,8 @@ module.exports = function(grunt) {
       }
     },
     sass: {
-      dist: {
+      // Plugin base css; one css file for plugin
+      plugin: {
         options: {
           style: 'compact',
           sourcemap: 'none'
@@ -44,6 +45,24 @@ module.exports = function(grunt) {
           src: ['app/shared/sass/main.scss'],
           dest: 'www/css/',
           ext: '.css'
+        }]
+      },
+      // Plugin skins css; one css file per skin
+      skins: {
+        options: {
+          style: 'compact',
+          sourcemap: 'none'
+        },
+        files: [{
+          expand: true,
+          flatten: false,
+          cwd: 'app/skins/',
+          src: ['**/main.scss'],
+          dest: 'www/css/skins/',
+          ext: '.css',
+          rename: function (dest, src) {
+            return dest + src.replace('/sass', '');
+          }
         }]
       }
     },
@@ -133,6 +152,13 @@ module.exports = function(grunt) {
         src: '**/*',
         dest: 'www/img/'
       },
+      app_skins: {
+        expand: true,
+        flatten: false,
+        cwd: 'app/skins',
+        src: '**/*',
+        dest: 'www/skins/'
+      },
       release: {
         expand: true,
         flatten: false,
@@ -195,7 +221,8 @@ module.exports = function(grunt) {
     'copy:app_root',
     'copy:app_views',
     'copy:app_shared',
-    'copy:app_imgs'
+    'copy:app_imgs',
+    'copy:app_skins'
   ]);
 
   grunt.registerTask('release', [
