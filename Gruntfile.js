@@ -118,9 +118,7 @@ module.exports = function(grunt) {
     },
     clean: {
       release: [
-        'release/',
-        'www/css/ows-wallet-plugin-client.css',
-        'www/lib/ows-wallet-plugin-client.js'
+        'release/'
       ]
     },
     copy: {
@@ -171,28 +169,28 @@ module.exports = function(grunt) {
       plugin_client_js: {
         expand: false,
         flatten: false,
-        cwd: '.',
+        cwd: '',
         src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-plugin-client.min.js',
         dest: 'www/lib/ows-wallet-plugin-client.js'
       },
       plugin_client_css: {
         expand: false,
         flatten: false,
-        cwd: '.',
+        cwd: '',
         src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-plugin-client.css',
         dest: 'www/css/ows-wallet-plugin-client.css'
       },
       plugin_client_bundle_js: {
         expand: false,
         flatten: false,
-        cwd: '.',
+        cwd: '',
         src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-plugin-client.bundle.min.js',
         dest: 'www/lib/ows-wallet-plugin-client.js'
       },
       plugin_client_bundle_css: {
         expand: false,
         flatten: false,
-        cwd: '.',
+        cwd: '',
         src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-plugin-client.bundle.css',
         dest: 'www/css/ows-wallet-plugin-client.css'
       }
