@@ -2,7 +2,7 @@
   "name": "@owstack/ows-wallet-plugin-starter",
   "description": "An OWS Wallet plugin.",
   "author": "Open Wallet Stack",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "keywords": [
     "ows",
     "ows wallet",
@@ -19,7 +19,7 @@
     "url": "https://github.com/owstack/ows-wallet-plugin-starter/issues"
   },
   "dependencies": {
-    "@owstack/ows-wallet-plugin-client": "^0.0.4",
+    "@owstack/ows-wallet-plugin-client": "^0.0.5",
     "grunt": "^0.4.5",
     "grunt-angular-gettext": "^0.2.15",
     "grunt-cli": "^0.1.13",

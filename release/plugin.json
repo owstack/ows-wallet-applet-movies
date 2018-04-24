@@ -8,7 +8,7 @@
       "support": "https://github.com/owstack/ows-wallet/issues/new",
       "privacy": "https://openwalletstack.org/disclaimer"
     },
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "An OWS Wallet plugin.",
     "author": "Open Wallet Stack"
   },
