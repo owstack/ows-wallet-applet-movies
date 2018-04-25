@@ -1,12 +1,15 @@
 {
   "header": {
-	  "id": "org.openwalletstack.wallet.plugin.applet.starter",
-	  "kind": "applet",
-	  "name": "Starter",
+    "id": "*PLUGINID*",
+    "kind": "*PLUGINKIND*",
+    "name": "*USERVISIBLENAME*",
+    "version": "*VERSION*",
+    "description": "*DESCRIPTION*",
+    "author": "*AUTHOR*",
     "url": {
-      "marketing": "https://openwalletstack.org/",
-      "support": "https://github.com/owstack/ows-wallet/issues/new",
-      "privacy": "https://openwalletstack.org/disclaimer"
+      "marketing": "*URL*",
+      "support": "*SUPPORTURL*",
+      "privacy": "*DISCLAIMERURL*"
     }
   },
   "permissions": {

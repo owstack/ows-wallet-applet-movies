@@ -1,0 +1,18 @@
+{
+  "packageName": "@owstack/ows-wallet-plugin-starter",
+  "version": "0.0.13",
+  "name": "starter",
+  "nameNoSpace": "starter",
+  "nameCase": "Starter",
+  "nameCaseNoSpace": "Starter",
+  "pluginId": "org.openwalletstack.wallet.plugin.applet.starter",
+  "pluginKind": "applet",
+  "userVisibleName": "Starter",
+  "description": "An OWS Wallet starter plugin.",
+  "author": "Open Wallet Stack",
+  "url": "https://openwalletstack.org",
+  "gitHubRepoGitUrl": "git://github.com/owstack/ows-wallet-plugin-starter.git",
+  "gitHubRepoBugs": "https://github.com/owstack/ows-wallet-plugin-starter/issues",
+  "supportUrl": "https://github.com/owstack/ows-wallet-plugin-starter/issues",
+  "disclaimerUrl": "https://openwalletstack.org/disclaimer"
+}

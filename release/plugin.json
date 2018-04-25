@@ -1,16 +1,17 @@
-{
+ { 
+  "//": "Changes to this file will be overwritten, modify it at plugin-template/ only.", 
   "header": {
     "id": "org.openwalletstack.wallet.plugin.applet.starter",
     "kind": "applet",
     "name": "Starter",
-    "url": {
-      "marketing": "https://openwalletstack.org/",
-      "support": "https://github.com/owstack/ows-wallet/issues/new",
-      "privacy": "https://openwalletstack.org/disclaimer"
-    },
     "version": "0.0.13",
-    "description": "An OWS Wallet plugin.",
-    "author": "Open Wallet Stack"
+    "description": "An OWS Wallet starter plugin.",
+    "author": "Open Wallet Stack",
+    "url": {
+      "marketing": "https://openwalletstack.org",
+      "support": "https://github.com/owstack/ows-wallet-plugin-starter/issues",
+      "privacy": "https://openwalletstack.org/disclaimer"
+    }
   },
   "permissions": {
     "delete": false
@@ -43,9 +44,7 @@
   ],
   "mainView": "index.html",
   "skins": {
-    "org.openwalletstack.wallet.skin.applet.starter.default": {
-      "default": true
-    }
+    "org.openwalletstack.wallet.skin.applet.starter.default": {"default": true}
   },
   "dependencies": {}
 }

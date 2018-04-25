@@ -1,7 +1,7 @@
 # translation
 i18n/po/*.mo
 i18n/crowdin_api_key.txt
-app/shared/translations
+plugin/shared/translations
 
 # Logs
 logs
