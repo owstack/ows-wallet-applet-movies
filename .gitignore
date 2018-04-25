@@ -61,7 +61,7 @@ plugin/shared/sass/overrides
 www/*
 
 # Generated resources and assets
-plugin.json
+/plugin.json
 plugin/index.html
 plugin/index.html.release
 plugin/shared/sass/overrides/
