@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" type="text/css" href="/css/ionic.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/ows-wallet-pre.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/ows-wallet-plugin-client.css">
   <title>*USERVISIBLENAME*</title>
 </head>
-<body ng-app="owsWalletPlugin" ng-controller="HomeCtrl as home">
+<body ng-app="owsWalletPlugin">
 
-  <ion-nav-view></ion-nav-view>
+  <ion-nav-view>
+  </ion-nav-view>
 
-  *RELEASELIBIONIC*
-  *RELEASELIBANGULARCOMPONENTS*
-  <script type="application/javascript" src="/lib/ows-wallet-plugin-client.js"></script>
+  <script type="application/javascript" src="/lib/ionic.bundle.min.js"></script>
+  <script type="application/javascript" src="/lib/ows-wallet-pre.js"></script>
   <script type="application/javascript" src="js/plugin.js"></script>
 
 </body>

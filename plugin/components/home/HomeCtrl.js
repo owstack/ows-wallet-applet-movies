@@ -19,25 +19,29 @@ angular.module('owsWalletPlugin.controllers').controller('HomeCtrl', function($s
     }
   });
 
-  // The session id should be used to obtain the applet session from the runtime context object (CContext).
+  // Event 'Local/AppletLeave' is fired after the user clicks to close this applet but before this applet controller
+  // is destroyed.  When this event is received we update our session data. Before the applet session is destroyed
+  // the session will write it's data to persistent storage.  Here we update session data with our applet preferences
+  // so they are available next time this applet runs.
+  $rootScope.$on('Local/AppletLeave', function(event, applet, wallet) {
+    self.savePreferences();
+  });
+
+  // The session id is used to obtain the applet session from the runtime context object (CContext).
   this.init = function() {
-
     CContext.getSession().then(function(session) {
-
       _session = session;
       return _session.getApplet();
 
     }).catch(function(error) {
-
       $log.debug("Failed to get session: " + error.message + ' (' + error.statusCode + ')');
       throw error;
 
     }).then(function(applet) {
-
       _applet = applet;
 
       _applet.propertySet({
-        'title': 'Just Goodbye'
+        'title': 'Hello, World!'
       });
 
       self.readPreferences();
@@ -66,14 +70,6 @@ angular.module('owsWalletPlugin.controllers').controller('HomeCtrl', function($s
     _session.set(SESSION_KEY_PREFS, _prefs);
     _session.flush();
   };
-
-  // Event 'Local/AppletLeave' is fired after the user clicks to close this applet but before this applet controller
-  // is destroyed.  When this event is received we update our session data. Before the applet session is destroyed
-  // the session will write it's data to persistent storage.  Here we update session data with our applet preferences
-  // so they are available next time this applet runs.
-  $rootScope.$on('Local/AppletLeave', function(event, applet, wallet) {
-    self.savePreferences();
-  });
 
   // Slidebox functions.
   this.initSlidebox = function () {

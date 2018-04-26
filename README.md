@@ -26,7 +26,7 @@ grunt
 npm start
 ```
 
-Visit [`localhost:8101`](http://localhost:8101/) to view the plugin.
+Visit [`localhost:8100`](http://localhost:8100/) to view the plugin.
 
 ### Release build:
 

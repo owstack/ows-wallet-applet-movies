@@ -60,8 +60,11 @@ plugin/shared/sass/overrides
 # All content copied into place by grunt.
 www/*
 
-# Generated resources and assets
+# templates
+/ionic.config.json
 /plugin.json
 plugin/index.html
 plugin/index.html.release
+
+# Generated resources and assets
 plugin/shared/sass/overrides/

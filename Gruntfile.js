@@ -25,6 +25,8 @@ module.exports = function(grunt) {
       main: {
         files: [
           'plugin/plugin.js',
+          'plugin/plugin.init.js',
+          'plugin/IndexCtrl.js',
           'plugin/shared/**/*.js',
           'plugin/services/**/*.js',
           'plugin/components/**/*.js'
@@ -74,10 +76,11 @@ module.exports = function(grunt) {
       plugin_js: {
         src: [
           'plugin/plugin.js',
+          'plugin/plugin.init.js',
+          'plugin/IndexCtrl.js',
           'plugin/shared/**/*.js',
           'plugin/services/**/*.js',
-          'plugin/components/**/*.js',
-          'plugin/IndexCtrl.js'
+          'plugin/components/**/*.js'
         ],
         dest: 'www/js/plugin.js'
       },
@@ -117,6 +120,9 @@ module.exports = function(grunt) {
       }
     },
     clean: {
+      www: [
+        'www/'
+      ],
       release: [
         'release/'
       ]
@@ -160,6 +166,24 @@ module.exports = function(grunt) {
         ],
         dest: 'www/skins/'
       },
+      ionic_fonts: {
+        expand: true,
+        flatten: true,
+        src: 'bower_components/ionic/release/fonts/ionicons.*',
+        dest: 'www/fonts/'
+      },
+      ionic_css: {
+        expand: true,
+        flatten: true,
+        src: 'bower_components/ionic/release/css/ionic.min.css',
+        dest: 'www/css/'
+      },      
+      ionic_js: {
+        expand: true,
+        flatten: true,
+        src: 'bower_components/ionic/release/js/ionic.bundle.min.js',
+        dest: 'www/lib/'
+      },      
       release: {
         expand: true,
         flatten: false,
@@ -171,41 +195,30 @@ module.exports = function(grunt) {
         ],
         dest: 'release/'
       },
-      release_index: {
-        expand: true,
-        flatten: true,
-        cwd: '',
-        src: [
-          'plugin/index.html.release',
-        ],
-        dest: 'release/www/',
-        rename: function (dest, src) {
-          return dest + src.replace('.release', '');
-        }
-      },
-      plugin_client_bundle_js: {
+      plugin_client_js: {
         expand: false,
         flatten: false,
         cwd: '',
-        src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-plugin-client.bundle.min.js',
+        src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-plugin-client.min.js',
         dest: 'www/lib/ows-wallet-plugin-client.js'
       },
-      plugin_client_bundle_css: {
+      plugin_client_css: {
         expand: false,
         flatten: false,
         cwd: '',
-        src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-plugin-client.bundle.css',
+        src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-plugin-client.css',
         dest: 'www/css/ows-wallet-plugin-client.css'
       }
     }
   });
 
-  grunt.registerTask('default', [
+  grunt.registerTask('base', [
+    'clean:www',
     'sass',
     'concat:plugin_js',
     'concat:plugin_css',
-    'copy:plugin_client_bundle_js',
-    'copy:plugin_client_bundle_css',
+    'copy:plugin_client_js',
+    'copy:plugin_client_css',
     'copy:plugin_root',
     'copy:plugin_views',
     'copy:plugin_shared',
@@ -213,12 +226,18 @@ module.exports = function(grunt) {
     'copy:plugin_skins'
   ]);
 
+  grunt.registerTask('default', [
+    'base',
+    'copy:ionic_fonts',
+    'copy:ionic_css',
+    'copy:ionic_js'
+  ]);
+
   grunt.registerTask('release', [
-    'default',
+    'base',
     'uglify',
     'clean:release',
-    'copy:release',
-    'copy:release_index'
+    'copy:release'
   ]);
 
   grunt.registerTask('translate', ['nggettext_extract']);

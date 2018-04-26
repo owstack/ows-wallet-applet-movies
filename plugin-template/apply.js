@@ -21,12 +21,8 @@ function copyDir(from, to) {
 var templates = {
   'package-template.json': '/',
   'plugin-template.json': '/',
-  'index-template.html': 'plugin/'
-};
-
-var releaseScripts = {
-  releaseLibIonic: '<script type="application/javascript" src="/lib/ionic.bundle.min.js"></script>',
-  releaseLibAngularComponents: '<script type="application/javascript" src="/lib/angular-components.js"></script>'
+  'index-template.html': 'plugin/',
+  'ionic.config.json': '/'
 };
 
 var configDir = process.argv[2];
@@ -55,7 +51,6 @@ Object.keys(templates).forEach(function(f) {
   console.log(' #    ' + f + ' => ' + targetDir);
 
   var content = fs.readFileSync(f, 'utf8');
-  var releaseScriptKeys = [];
   f = f.replace('-template', '');
 
   if (f.indexOf('.json') > 0) {
@@ -72,17 +67,6 @@ Object.keys(templates).forEach(function(f) {
     content = content.replace(r, config[k]);
   });
 
-  // Create a release version of index.html (index.html.release)
-  if (f === 'index.html') {
-    var contentRelease = JSON.parse(JSON.stringify(content));
-
-    Object.keys(releaseScripts).forEach(function(k) {
-      var r = new RegExp("\\*" + k.toUpperCase() + "\\*", "g");
-      contentRelease = contentRelease.replace(r, releaseScripts[k]);
-      content = content.replace(r, '');
-    });
-  }
-
   // Look for any leftover variables.
   var r = new RegExp("\\*[A-Z]{3,30}\\*", "g");
   var s = content.match(r);
@@ -96,10 +80,6 @@ Object.keys(templates).forEach(function(f) {
     fs.mkdirSync('../' + targetDir);
   }
   fs.writeFileSync('../' + targetDir + f, content, 'utf8');
-
-  if (f === 'index.html') {
-    fs.writeFileSync('../' + targetDir + f + '.release', contentRelease, 'utf8');
-  }
 
 });
 console.log('Done configuring plugin');

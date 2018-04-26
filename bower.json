@@ -1,14 +1,12 @@
 {
-  "name": "starter",
+  "name": "ows-plugin",
   "keywords": [
     "ows",
     "ows wallet",
     "wallet",
-    "plugin",
+    "plugin"
   ],
   "dependencies": {
-    "angular-gettext": "2.2.1",
-    "ionic": "https://github.com/owstack/ionic-v1.git#ows-release",
-    "ng-lodash": "0.2.3"
+    "ionic": "https://github.com/owstack/ionic-v1.git#ows-release"
   }
 }
