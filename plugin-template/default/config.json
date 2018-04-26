@@ -1,6 +1,6 @@
 {
   "packageName": "@owstack/ows-wallet-plugin-starter",
-  "version": "0.0.19",
+  "version": "0.0.21",
   "name": "starter",
   "nameNoSpace": "starter",
   "nameCase": "Starter",

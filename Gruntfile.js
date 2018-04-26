@@ -190,24 +190,23 @@ module.exports = function(grunt) {
         cwd: '',
         src: [
           'www/**/*',
-          '!**/ows-wallet-plugin-client*', // Libraries and css are bundled with app, don't add again.
           'plugin.json'
         ],
         dest: 'release/'
       },
-      plugin_client_js: {
+      pre_js: {
         expand: false,
         flatten: false,
         cwd: '',
-        src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-plugin-client.min.js',
-        dest: 'www/lib/ows-wallet-plugin-client.js'
+        src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-pre.min.js',
+        dest: 'www/lib/ows-wallet-pre.js'
       },
-      plugin_client_css: {
+      pre_css: {
         expand: false,
         flatten: false,
         cwd: '',
-        src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-plugin-client.css',
-        dest: 'www/css/ows-wallet-plugin-client.css'
+        src: 'node_modules/@owstack/ows-wallet-plugin-client/release/ows-wallet-pre.css',
+        dest: 'www/css/ows-wallet-pre.css'
       }
     }
   });
@@ -217,8 +216,6 @@ module.exports = function(grunt) {
     'sass',
     'concat:plugin_js',
     'concat:plugin_css',
-    'copy:plugin_client_js',
-    'copy:plugin_client_css',
     'copy:plugin_root',
     'copy:plugin_views',
     'copy:plugin_shared',
@@ -228,6 +225,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'base',
+    'copy:pre_js',
+    'copy:pre_css',
     'copy:ionic_fonts',
     'copy:ionic_css',
     'copy:ionic_js'
