@@ -25,11 +25,15 @@ angular.module('owsWalletPlugin').config(function($urlRouterProvider, $stateProv
 })
 .run(function($rootScope, $ionicPlatform, $state) {
 
-  $ionicPlatform.ready(function() {
+  // Listen for the client service to become ready.
+  $rootScope.$on('$pre.ready', function(event) {
+
+    // Load the home view.
     $state.go('home');
   });
 
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
     console.log('Route change start from:', fromState.name || '-', ' to:', toState.name);
   });
+
 });

@@ -1,35 +1,31 @@
 <ion-view id="home">
-	<!-- Status bar -->
-	<div ng-class="{'show-status-bar': env.hasStatusBar}"
-		ng-style="{'background':applet.view.statusBarBackground, 'border-bottom':applet.view.statusBarBorderBottom}"></div>
-
-	<!-- Navigation bar -->
-  <ion-nav-bar class="applet-navbar" ng-class="{'has-status-bar': env.hasStatusBar}">
-    <ion-nav-title class="applet-navbar-title">{{applet.title}}</ion-nav-title>
-    <ion-nav-buttons side="left">
-       <a class="button button-clear applet-navbar-button applet-icon-left ion-chevron-left"
-      	ng-click="home.previous()" ng-show="home.slideIndex > 0">Prev</a>
-    </ion-nav-buttons>
-    <ion-nav-buttons side="right"> 
-      <a class="button button-clear applet-navbar-button applet-icon-right ion-chevron-right"
-      	ng-click="home.next()" ng-show="home.slideIndex != 2">Next</a>
-    </ion-nav-buttons>
+  <ion-nav-bar>
+    <ion-nav-title>
+      <span>{{applet.title}}</span>
+    </ion-nav-title>
   </ion-nav-bar>
-
-  <!-- Content -->
-	<ion-content class="applet-content has-header" ng-class="{'has-status-bar-and-header': env.hasStatusBar}">
-
-		<ion-slide-box class="applet-slide-box" on-slide-changed="home.slideChanged(index)">
-		  <ion-slide>
-        <div ng-include="'views/page1/page1.html'"></div>
-		  </ion-slide>
-		  <ion-slide>
-        <div ng-include="'views/page2/page2.html'"></div>
-		  </ion-slide>
-		  <ion-slide>
-        <div ng-include="'views/page3/page3.html'"></div>
-		  </ion-slide>
-		</ion-slide-box>
-
-	</ion-content>
+  <ion-content>
+    <div class="card no-header">
+      <ion-list>
+        <ion-item class="item-icon-right" ui-sref="page1">
+          <span translate>
+            Page 1
+          </span>
+          <i class="icon arrow-right"></i>
+        </ion-item>
+        <ion-item class="item-icon-right" ui-sref="page2">
+          <span translate>
+            Page 2
+          </span>
+          <i class="icon arrow-right"></i>
+        </ion-item>
+        <ion-item class="item-icon-right" ui-sref="page3">
+          <span translate>
+            Page 3
+          </span>
+          <i class="icon arrow-right"></i>
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
 </ion-view>
