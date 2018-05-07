@@ -1,0 +1,27 @@
+<ion-view id="detail">
+  <ion-nav-bar class="bar bar-dark">
+    <ion-nav-title>{{movie.title}}</ion-nav-title>
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content>
+		<div class="list card">
+		  <div class="item item-avatar">
+		    <img ng-src="img/movies/{{movie.id}}/avatar.png">
+		    <h2>{{movie.episode}}</h2>
+		    <p>{{movie.year}}</p>
+		  </div>
+		  <div class="item item-body">
+		    <img class="full-image" ng-src="img/movies/{{movie.id}}/feature.png">
+		    <p>{{movie.plot}}</p>
+		    <p>
+		      <a href="#" class="subdued">{{movie.likeCount}} Likes</a>
+		      <a href="#" class="subdued">{{movie.commentCount}} Comments</a>
+		    </p>
+				<button class="button button-dark button-buy">
+				  Buy Now
+				</button>
+		  </div>
+		</div>
+  </ion-content>
+</ion-view>

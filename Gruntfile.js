@@ -128,7 +128,7 @@ module.exports = function(grunt) {
       ]
     },
     copy: {
-      plugin_root: {
+      plugin_index: {
         expand: true,
         flatten: false,
         cwd: 'plugin/',
@@ -194,6 +194,16 @@ module.exports = function(grunt) {
         ],
         dest: 'release/'
       },
+      release_plugin_index: {
+        expand: true,
+        flatten: false,
+        cwd: 'plugin/',
+        src: 'index.html.release',
+        dest: 'release/www/',
+        rename: function (dest, src) {
+          return dest + src.replace('.release', '');
+        }
+      },
       pre_js: {
         expand: false,
         flatten: false,
@@ -216,7 +226,7 @@ module.exports = function(grunt) {
     'sass',
     'concat:plugin_js',
     'concat:plugin_css',
-    'copy:plugin_root',
+    'copy:plugin_index',
     'copy:plugin_views',
     'copy:plugin_shared',
     'copy:plugin_imgs',
@@ -236,7 +246,8 @@ module.exports = function(grunt) {
     'base',
     'uglify',
     'clean:release',
-    'copy:release'
+    'copy:release',
+    'copy:release_plugin_index'
   ]);
 
   grunt.registerTask('translate', ['nggettext_extract']);

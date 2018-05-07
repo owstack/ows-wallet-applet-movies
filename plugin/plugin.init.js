@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('owsWalletPlugin').config(function($urlRouterProvider, $stateProvider) {
-  $urlRouterProvider.otherwise('/home');
+//  $urlRouterProvider.otherwise('/home');
 
 	$stateProvider
     .state('home', {
@@ -9,31 +9,28 @@ angular.module('owsWalletPlugin').config(function($urlRouterProvider, $stateProv
 	    controller: 'HomeCtrl',
 	    templateUrl: 'views/home/home.html'
     })
-    .state('page1', {
-      url: '/page1',
-	    templateUrl: 'views/page1/page1.html'
-    })
-    .state('page2', {
-      url: '/page2',
-	    templateUrl: 'views/page2/page2.html'
-    })
-    .state('page3', {
-      url: '/page3',
-	    templateUrl: 'views/page3/page3.html'
+    .state('detail', {
+      url: '/detail/:id',
+      controller: 'DetailCtrl',
+	    templateUrl: 'views/detail/detail.html'
     });
 
 })
-.run(function($rootScope, $ionicPlatform, $state) {
+.run(function($rootScope, $state, starterService, $ionicPlatform) {
 
-  // Listen for the client service to become ready.
-  $rootScope.$on('$pre.ready', function(event) {
+  $ionicPlatform.ready(function() {
 
-    // Load the home view.
-    $state.go('home');
+    // Listen for the client service to become ready, do some initialization and set the home view.
+    $rootScope.$on('$pre.ready', function(event, session) {
+      starterService.init(session, function() {
+        $state.go('home');
+      });
+    });
+
   });
 
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-    console.log('Route change start from:', fromState.name || '-', ' to:', toState.name);
+    console.log('Applet route change start from:', fromState.name || '-', ' to:', toState.name);
   });
 
 });

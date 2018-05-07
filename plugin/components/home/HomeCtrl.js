@@ -1,21 +1,10 @@
 'use strict';
 
-angular.module('owsWalletPlugin.controllers').controller('HomeCtrl', function($scope, $ionicSlideBoxDelegate) {
+angular.module('owsWalletPlugin.controllers').controller('HomeCtrl', function($scope, starterService, movieService) {
 
   $scope.$on("$ionicView.beforeEnter", function(event, data) {
-    $scope.slideIndex = 0;
+    $scope.appletName = starterService.appletName;
+	  $scope.movies = movieService.getMovies();
   });
-
-  $scope.next = function() {
-    $ionicSlideBoxDelegate.next();
-  };
-
-  $scope.previous = function() {
-    $ionicSlideBoxDelegate.previous();
-  };
-
-  $scope.slideChanged = function(index) {
-    $scope.slideIndex = index;
-  };
 
 });

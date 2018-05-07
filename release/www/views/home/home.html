@@ -1,31 +1,19 @@
 <ion-view id="home">
-  <ion-nav-bar>
-    <ion-nav-title>
-      <span>{{applet.title}}</span>
-    </ion-nav-title>
+  <ion-nav-bar class="bar bar-dark">
+    <ion-nav-title>{{appletName}}</ion-nav-title>
   </ion-nav-bar>
   <ion-content>
-    <div class="card no-header">
-      <ion-list>
-        <ion-item class="item-icon-right" ui-sref="page1">
-          <span translate>
-            Page 1
-          </span>
-          <i class="icon arrow-right"></i>
-        </ion-item>
-        <ion-item class="item-icon-right" ui-sref="page2">
-          <span translate>
-            Page 2
-          </span>
-          <i class="icon arrow-right"></i>
-        </ion-item>
-        <ion-item class="item-icon-right" ui-sref="page3">
-          <span translate>
-            Page 3
-          </span>
-          <i class="icon arrow-right"></i>
-        </ion-item>
-      </ion-list>
-    </div>
+    <ion-list>
+      <div class="item item-divider">
+        All Movies
+      </div>
+      <a class="item item-thumbnail-left item-icon-right" ui-sref="detail({id: movie.id})" ng-repeat="movie in movies">
+        <img ng-src="img/movies/{{movie.id}}/thumbnail.png">
+        <h2>{{movie.title}}</h2>
+        <p>{{movie.episode}}</p>
+        <p>{{movie.year}}</p>
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+    </ion-list>
   </ion-content>
 </ion-view>
