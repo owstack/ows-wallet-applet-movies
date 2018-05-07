@@ -67,4 +67,5 @@ plugin/index.html
 plugin/index.html.release
 
 # Generated resources and assets
-plugin/shared/sass/overrides/
+resources/*
+plugin/assets/img
