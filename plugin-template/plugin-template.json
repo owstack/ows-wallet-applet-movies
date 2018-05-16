@@ -32,7 +32,8 @@
     },
     "keywords": [
       "ows",
-      "plugin"
+      "plugin",
+      "applet"
     ]
   },
   "resources": [
@@ -41,9 +42,34 @@
     "<plugin-path>/img/icon.png",
     "<plugin-path>/img/splash.png"
   ],
-  "mainView": "index.html",
   "skins": {
-    "org.openwalletstack.wallet.skin.applet.starter.default": {"default": true}
+    "default": {"default": true}
   },
-  "dependencies": {}
+  "dependencies": {
+    "org.openwalletstack.wallet.plugin.servlet.bitpay": {
+      "package": {
+        "@owstack/ows-wallet-servlet-bitpay": "^0.0.10"
+      },
+      "options": {
+        "startMode": "auto"
+      },
+      "movieStore": {
+        "api": {
+          "url": "https://test.bitpay.com/api",
+          "auth": {
+            "token": "Cgnu77y8idRknxwVoy1JvNF6pinZ4Xrr5c495TKMYBiD"
+          }
+        },
+        "invoice": {
+          "transactionSpeed": "",
+          "notificationEmail": "",
+          "notificationURL": "",
+          "requiredFields": [
+            "buyer.name",
+            "buyer.email"
+          ]
+        }
+      }
+    }
+  }
 }

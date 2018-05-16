@@ -26,7 +26,6 @@ module.exports = function(grunt) {
         files: [
           'plugin/plugin.js',
           'plugin/plugin.init.js',
-          'plugin/IndexCtrl.js',
           'plugin/shared/**/*.js',
           'plugin/services/**/*.js',
           'plugin/components/**/*.js'
@@ -49,7 +48,7 @@ module.exports = function(grunt) {
           ext: '.css'
         }]
       },
-      // Plugin skins css; one css file per skin
+      // Applet skins css; one css file per skin
       skins: {
         options: {
           style: 'compact',
@@ -77,17 +76,23 @@ module.exports = function(grunt) {
         src: [
           'plugin/plugin.js',
           'plugin/plugin.init.js',
-          'plugin/IndexCtrl.js',
           'plugin/shared/**/*.js',
           'plugin/services/**/*.js',
-          'plugin/components/**/*.js'
+          'plugin/components/**/*.js',
+          'plugin/api/handlers/**/*.js'
         ],
         dest: 'www/js/plugin.js'
       },
       plugin_css: {
         src: ['www/css/main.css'],
         dest: 'www/css/main.css'
-      }
+      },
+      plugin_api_js: {
+        src: [
+          'plugin/api/*.js'
+        ],
+        dest: 'api/api.js'
+      },
     },
     uglify: {
       options: {
@@ -120,6 +125,9 @@ module.exports = function(grunt) {
       }
     },
     clean: {
+      api: [
+        'api/'
+      ],
       www: [
         'www/'
       ],
@@ -159,7 +167,7 @@ module.exports = function(grunt) {
       plugin_skins: {
         expand: true,
         flatten: false,
-        cwd: 'plugin/skins',
+        cwd: 'plugin/assets/skins',
         src: [
           '**/*',
           '!**/sass/**' // Don't bring sass files into the app
@@ -189,6 +197,7 @@ module.exports = function(grunt) {
         flatten: false,
         cwd: '',
         src: [
+          'api/**/*',
           'www/**/*',
           'plugin.json'
         ],
@@ -222,9 +231,11 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('base', [
+    'clean:api',
     'clean:www',
     'sass',
     'concat:plugin_js',
+    'concat:plugin_api_js',
     'concat:plugin_css',
     'copy:plugin_index',
     'copy:plugin_views',

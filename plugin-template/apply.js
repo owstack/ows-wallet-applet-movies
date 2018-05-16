@@ -18,16 +18,12 @@ function copyDir(from, to) {
   fs.copySync(from, to);
 }
 
+// The order of processing is important.
+// The plugin.json template must be processed before the package.json template in order to add plugin dependencies to package.json.
 var templates = {
-//  'package-template.json': '/package.json',
-//  'plugin-template.json': '/plugin.json',
-//  'index-template.html': 'plugin/index-template.html',
-//  'index-template.html': 'plugin/index-template.html.release',
-//  'ionic.config.json': '/ionic.config.json'
-
   // output: template input
-  '/package.json': 'package-template.json',
   '/plugin.json': 'plugin-template.json',
+  '/package.json': 'package-template.json',
   'plugin/index.html': 'index-template.html',
   'plugin/index.html.release': 'index-template.html',
   '/ionic.config.json': 'ionic.config.json'
@@ -42,6 +38,7 @@ if (!fs.existsSync(configDir)) {
 var JSONheader = ' { ' + "\n" + '  "//": "Changes to this file will be overwritten, modify it at plugin-template/ only.", ';
 var configBlob = fs.readFileSync(configDir + '/config.json', 'utf8');
 var config = JSON.parse(configBlob, 'utf8');
+var pluginDependencies = {};
 
 // Set internal config key values.
 // If the plugin package includes an npm organization (i.e., starts with '@') then the plugin path is one level deeper than without.
@@ -60,7 +57,6 @@ console.log('Done creating resources');
 // Replace key-value strings in template files and add installable plugins to package.json
 console.log('Configuring plugin...');
 Object.keys(templates).forEach(function(target) {
-//  var targetDir = templates[f];
 
   var f = templates[target];
   var targetDir = target.replace(/[^\\\/]*$/, '');
@@ -74,6 +70,7 @@ Object.keys(templates).forEach(function(target) {
     content = content.replace('{', JSONheader);
   }
 
+  // Replace placeholders in template file with config.json values.
   Object.keys(config).forEach(function(k) {
     if (k.indexOf('_') == 0) {
       return;
@@ -102,6 +99,21 @@ Object.keys(templates).forEach(function(target) {
   if (s) {
     console.log('UNKNOWN VARIABLE', s);
     process.exit(1);
+  }
+  // Done replacing placeholders.
+
+  // Capture dependencies for adding to package.json.
+  if (targetFile.match('plugin.json')) {
+    var pluginConfig = JSON.parse(content);
+    pluginDependencies = pluginConfig.dependencies;
+    content = JSON.stringify(pluginConfig, null, 2);
+  }
+
+  // Assign all the plugin dependencies to the package.  
+  if (targetFile.match('package.json')) {
+    var pkg = JSON.parse(content);
+    pkg.dependencies = Object.assign(pkg.dependencies, pluginDependencies);
+    content = JSON.stringify(pkg, null, 2);
   }
 
   // Write the result.

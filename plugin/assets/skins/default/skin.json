@@ -1,7 +1,7 @@
 {
   "header": {
     "name": "default",
-    "id": "org.openwalletstack.wallet.skin.applet.starter.default",
+    "id": "default",
     "kind": "applet",
     "description": "A Starter applet skin.",
     "author": "Open Wallet Stack",

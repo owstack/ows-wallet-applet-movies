@@ -22,9 +22,11 @@ angular.module('owsWalletPlugin').config(function($urlRouterProvider, $stateProv
 
     // Listen for the client service to become ready, do some initialization and set the home view.
     $rootScope.$on('$pre.ready', function(event, session) {
+
       starterService.init(session, function() {
         $state.go('home');
       });
+
     });
 
   });

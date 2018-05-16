@@ -1,7 +1,7 @@
-OWS Wallet Plugin - Starter
+OWS Wallet Applet Plugin - Starter
 =======
 
-A minimal OWS Wallet applet plugin to get you started on your own plugin.
+A minimal OWS Wallet applet plugin to get you started on your own applet plugin.
 
 ## Main Features
 
@@ -20,8 +20,7 @@ npm install -g grunt-cli
 
 ```sh
 sudo gem install sass
-bower install
-npm install
+npm run apply
 grunt
 npm start
 ```
@@ -32,8 +31,7 @@ Visit [`localhost:8100`](http://localhost:8100/) to view the plugin.
 
 ```sh
 sudo gem install sass
-bower install
-npm install
+npm run apply
 grunt release
 ```
 
