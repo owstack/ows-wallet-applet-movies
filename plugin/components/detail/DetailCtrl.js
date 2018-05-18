@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($rootScope, $scope, apiLog, movieService, CSession) {
+angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, pLog, movieService, Session) {
 
   $scope.buyDiabled = true;
 
@@ -8,24 +8,22 @@ angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function(
 	  $scope.movie = movieService.getMovie(data.stateParams.id);
   });
 
-  $rootScope.$on('$pre.openForBusiness', function(event, pluginId) {
+  owswallet.Plugin.openForBusiness('org.openwalletstack.wallet.plugin.servlet.bitpay', function() {
     // The BitPay servlet is ready, user can now buy movies!
-    if (pluginId == 'org.openwalletstack.wallet.plugin.servlet.bitpay') {
-      $scope.buyDiabled = false;
-    }
+    $scope.buyDiabled = false;
   });
 
   $scope.buy = function(id) {
-  	CSession.getInstance().chooseWallet().then(function(wallet) {
+  	Session.getInstance().chooseWallet().then(function(wallet) {
   		if (!wallet) {
-	  		apiLog.info('User canceled');
+	  		pLog.info('User canceled');
         return;
   		}
 
-      movieService.buyMovie(id);
+      movieService.buyMovie(id, wallet);
 
   	}).catch(function(error) {
-  		apiLog.error('Could not choose a wallet: ' + JSON.stringify(error));
+  		pLog.error('Could not choose a wallet: ' + JSON.stringify(error));
   	});
   };
 

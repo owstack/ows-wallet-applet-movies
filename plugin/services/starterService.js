@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('owsWalletPlugin.services').service('starterService', function ($rootScope, apiLog) {
+angular.module('owsWalletPlugin.services').service('starterService', function ($rootScope, pLog, Session) {
 
   var root = {};
   var SESSION_KEY_DATA = 'data';
@@ -17,11 +17,9 @@ angular.module('owsWalletPlugin.services').service('starterService', function ($
   root.data = {};
 
   // Initialize our environment.
-  root.init = function(sessionObj, cb) {
-    // Hold on to my session object.
-    session = sessionObj;
-
+  root.init = function(cb) {
     // Set some properties.
+    session = Session.getInstance();
     root.appletName = session.plugin.header.name;
 
     cb();
@@ -35,7 +33,7 @@ angular.module('owsWalletPlugin.services').service('starterService', function ($
     session.get(SESSION_KEY_DATA).then(function(value) {
       cb(null, value);
     }).catch(function(error) {
-      apiLog.error("Failed to read preferences: " + error.message + ' (' + error.statusCode + ')');
+      pLog.error("Failed to read preferences: " + error.message + ' (' + error.statusCode + ')');
       cb(error);
     });
   };

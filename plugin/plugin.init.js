@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('owsWalletPlugin').config(function($urlRouterProvider, $stateProvider) {
-//  $urlRouterProvider.otherwise('/home');
+angular.module('owsWalletPlugin').config(function($stateProvider) {
 
 	$stateProvider
     .state('home', {
@@ -16,23 +15,18 @@ angular.module('owsWalletPlugin').config(function($urlRouterProvider, $stateProv
     });
 
 })
-.run(function($rootScope, $state, starterService, $ionicPlatform) {
+.run(function($rootScope, $state, pLog, starterService) {
 
-  $ionicPlatform.ready(function() {
+  owswallet.Plugin.ready(function() {
 
-    // Listen for the client service to become ready, do some initialization and set the home view.
-    $rootScope.$on('$pre.ready', function(event, session) {
-
-      starterService.init(session, function() {
-        $state.go('home');
-      });
-
+    starterService.init(function() {
+      $state.go('home');
     });
 
   });
 
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-    console.log('Applet route change start from:', fromState.name || '-', ' to:', toState.name);
+    pLog.debug('Applet route change start from:', fromState.name || '-', ' to:', toState.name);
   });
 
 });

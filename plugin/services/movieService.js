@@ -1,14 +1,10 @@
 'use strict';
 
-angular.module('owsWalletPlugin.services').service('movieService', function (apiLog, lodash, CBitPay, CSession) {
+angular.module('owsWalletPlugin.services').service('movieService', function (pLog, lodash, BitPay, Session) {
 
   var root = {};
 
-  var bitpay = new CBitPay('movieStore');
-
-  if (!bitpay) {
-    apiLog.error('Could not create instance of CBitPay');
-  }
+  var bitpay = new BitPay('movieStore');
 
   var movies = [{
     id: 'the-avengers',
@@ -58,7 +54,7 @@ angular.module('owsWalletPlugin.services').service('movieService', function (api
     });
   };
 
-  root.buyMovie = function(id) {
+  root.buyMovie = function(id, wallet) {
     var movie = root.getMovie(id);
 
     var request = {
@@ -67,10 +63,14 @@ angular.module('owsWalletPlugin.services').service('movieService', function (api
     };
 
     bitpay.createInvoice(request).then(function(invoice) {
-      apiLog.debug('Got invoice: ' + JSON.stringify(invoice));
+      // Return Invoice object.
+      pLog.debug('Got invoice: ' + JSON.stringify(invoice));
+
+
+
 
     }).catch(function(error) {
-      apiLog.error('Could not get invoice: ' + JSON.stringify(error));
+      pLog.error('Could not get invoice: ' + JSON.stringify(error));
     });
   };
 

@@ -55,7 +55,7 @@
       },
       "movieStore": {
         "api": {
-          "url": "https://test.bitpay.com/api",
+          "url": "https://test.bitpay.com",
           "auth": {
             "token": "Cgnu77y8idRknxwVoy1JvNF6pinZ4Xrr5c495TKMYBiD"
           }
