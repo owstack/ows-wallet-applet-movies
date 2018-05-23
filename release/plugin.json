@@ -4,7 +4,7 @@
     "id": "org.openwalletstack.wallet.plugin.applet.starter",
     "kind": "applet",
     "name": "Starter",
-    "version": "0.0.28",
+    "version": "0.0.29",
     "description": "An OWS Wallet starter plugin.",
     "author": "Open Wallet Stack",
     "url": {

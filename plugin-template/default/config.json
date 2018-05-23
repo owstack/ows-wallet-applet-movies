@@ -1,6 +1,6 @@
 {
   "packageName": "@owstack/ows-wallet-plugin-starter",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "pluginId": "org.openwalletstack.wallet.plugin.applet.starter",
   "pluginKind": "applet",
   "name": "starter",

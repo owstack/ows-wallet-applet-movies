@@ -21,7 +21,7 @@
     "url": "*GITHUBREPOBUGS*"
   },
   "dependencies": {
-    "@owstack/ows-wallet-plugin-client": "^0.0.31"
+    "@owstack/ows-wallet-plugin-client": "^0.0.32"
   },
   "scripts": {
     "start":             "npm run build:www && ionic serve --no-livereload --nogulp -s --address 0.0.0.0",
