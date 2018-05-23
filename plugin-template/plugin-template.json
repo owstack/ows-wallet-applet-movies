@@ -48,7 +48,7 @@
   "dependencies": {
     "org.openwalletstack.wallet.plugin.servlet.bitpay": {
       "package": {
-        "@owstack/ows-wallet-servlet-bitpay": "^0.0.10"
+        "@owstack/ows-wallet-servlet-bitpay": "^0.0.11"
       },
       "options": {
         "startMode": "auto"
