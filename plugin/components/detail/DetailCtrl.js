@@ -1,30 +1,67 @@
 'use strict';
 
-angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, pLog, movieService, Session) {
+angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, pLog, movieService, BitPay, Session, Transaction, popupService) {
 
-  $scope.buyDiabled = true;
+  var bitpay = new BitPay('movieStore');
 
-  $scope.$on("$ionicView.beforeEnter", function(event, data) {
-	  $scope.movie = movieService.getMovie(data.stateParams.id);
-  });
-
-  owswallet.Plugin.openForBusiness('org.openwalletstack.wallet.plugin.servlet.bitpay', function() {
+  owswallet.Plugin.openForBusiness(BitPay.pluginId, function() {
     // The BitPay servlet is ready, user can now buy movies!
     $scope.buyDiabled = false;
   });
 
-  $scope.buy = function(id) {
-  	Session.getInstance().chooseWallet().then(function(wallet) {
-  		if (!wallet) {
-	  		pLog.info('User canceled');
+  $scope.$on("$ionicView.beforeEnter", function(event, data) {
+    $scope.buyDiabled = true;
+    $scope.movie = movieService.getMovie(data.stateParams.id);
+  });
+
+  $scope.buy = function(movieId) {
+    Session.getInstance().chooseWallet().then(function(wallet) {
+      if (!wallet) {
+        pLog.info('User canceled');
         return;
-  		}
+      }
 
-      movieService.buyMovie(id, wallet);
+      var movie = movieService.getMovie(movieId);
+      doBuy(movie, wallet);
 
-  	}).catch(function(error) {
-  		pLog.error('Could not choose a wallet: ' + JSON.stringify(error));
-  	});
+    }).catch(function(error) {
+      pLog.error('Could not choose a wallet: ' + JSON.stringify(error));
+    });
+  };
+
+  function doBuy(movie, wallet) {
+    var payment = {
+      price: movie.price.amount,
+      currency: movie.price.currency
+    };
+
+    bitpay.sendPayment(wallet, payment, confirmHandler).then(function() {
+      pLog.debug('Payment sent');
+
+    }).catch(function(error) {
+      pLog.error('Could not create payment request: ' + error.message);
+
+      var title = 'Oops! Our Fault';
+      var message = 'We are unable to process your purchase at this time. Please try again later.';
+      popupService.showAlert(title, message);
+
+    });
+
+    function confirmHandler() {
+      return new Promise(function(resolve, reject) {
+        var title = 'Confirm Your Purchase';
+        var message = 'You are buying ' + movie.title + ' for ' + movie.price + ' ' + movie.currency + '.';
+        var okText = 'Buy';
+        var cancelText = 'Cancel';
+
+        popupService.showConfirm(title, message, okText, cancelText, function(ok) {
+          if (ok) {
+            resolve();
+          }
+          reject();
+        });
+      });
+    };
   };
 
 });

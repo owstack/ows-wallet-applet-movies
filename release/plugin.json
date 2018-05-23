@@ -58,9 +58,9 @@
       },
       "movieStore": {
         "api": {
-          "url": "https://test.bitpay.com",
+          "url": "https://bitpay.com",
           "auth": {
-            "token": "Cgnu77y8idRknxwVoy1JvNF6pinZ4Xrr5c495TKMYBiD"
+            "token": "AijZvWZuS3ikz7tBBdDp5umswnaLriaLLCKPbpAehaER"
           }
         },
         "invoice": {

@@ -1,10 +1,8 @@
 'use strict';
 
-angular.module('owsWalletPlugin.services').service('movieService', function (pLog, lodash, BitPay, Session) {
+angular.module('owsWalletPlugin.services').service('movieService', function (pLog, lodash) {
 
   var root = {};
-
-  var bitpay = new BitPay('movieStore');
 
   var movies = [{
     id: 'the-avengers',
@@ -51,26 +49,6 @@ angular.module('owsWalletPlugin.services').service('movieService', function (pLo
   root.getMovie = function(id) {
     return lodash.find(movies, function(movie) {
       return id == movie.id;
-    });
-  };
-
-  root.buyMovie = function(id, wallet) {
-    var movie = root.getMovie(id);
-
-    var request = {
-      price: movie.price.amount,
-      currency: movie.price.currency
-    };
-
-    bitpay.createInvoice(request).then(function(invoice) {
-      // Return Invoice object.
-      pLog.debug('Got invoice: ' + JSON.stringify(invoice));
-
-
-
-
-    }).catch(function(error) {
-      pLog.error('Could not get invoice: ' + JSON.stringify(error));
     });
   };
 
