@@ -1,5 +1,9 @@
 {
   "name": "@owstack/ows-wallet-plugin-starter",
+  "title": "Starter",
+  "version": "0.0.29",
+  "description": "An OWS Wallet starter plugin.",
+  "author": "Open Wallet Stack",
   "keywords": [
     "ows",
     "ows wallet",
@@ -46,9 +50,5 @@
     "load-grunt-tasks": "^3.5.0",
     "lodash": "^4.17.4",
     "trash-cli": "^1.4.0"
-  },
-  "title": "Starter",
-  "version": "0.0.29",
-  "description": "An OWS Wallet starter plugin.",
-  "author": "Open Wallet Stack"
+  }
 }
