@@ -185,7 +185,7 @@ module.exports = function(grunt) {
       },
       release: {
         files: {
-          'release/js/plugin.js': ['release/js/plugin.js']
+          'release/www/js/plugin.js': ['release/www/js/plugin.js']
         }
       }
     }
