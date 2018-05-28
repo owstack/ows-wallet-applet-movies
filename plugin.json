@@ -1,15 +1,15 @@
 {
   "header": {
-    "id": "*PLUGINID*",
-    "kind": "*PLUGINKIND*",
-    "name": "*USERVISIBLENAME*",
-    "version": "*VERSION*",
-    "description": "*DESCRIPTION*",
-    "author": "*AUTHOR*",
+    "id": "org.openwalletstack.wallet.plugin.applet.starter",
+    "kind": "applet",
+    "name": "Starter",
+    "version": "0.0.29",
+    "description": "An OWS Wallet starter plugin.",
+    "author": "Open Wallet Stack",
     "url": {
-      "marketing": "*URL*",
-      "support": "*SUPPORTURL*",
-      "privacy": "*DISCLAIMERURL*"
+      "marketing": "https://openwalletstack.org",
+      "support": "https://github.com/owstack/ows-wallet-plugin-starter/issues",
+      "privacy": "https://openwalletstack.org/disclaimer"
     }
   },
   "permissions": {
@@ -43,7 +43,9 @@
     "<plugin-path>/img/splash.png"
   ],
   "skins": {
-    "default": {"default": true}
+    "default": {
+      "default": true
+    }
   },
   "dependencies": {
     "org.openwalletstack.wallet.plugin.servlet.bitpay": {

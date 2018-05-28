@@ -6,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="format-detection" content="telephone=no">
-  <meta name="ows-wallet-plugin-kind" content="*PLUGINKIND*">
-  <link rel="stylesheet" type="text/css" href="*ROOTRELATIVE*css/ionic.min.css">
-  <link rel="stylesheet" type="text/css" href="*ROOTRELATIVE*css/ows-wallet-pre.css">
+  <meta name="ows-wallet-plugin-kind" content="*PLUGINKIND*">*PLUGINCSS*
   <link rel="stylesheet" type="text/css" href="css/main.css">
-  <title>*USERVISIBLENAME*</title>
+  <title>*PLUGINNAME*</title>
 </head>
 <body ng-app="owsWalletPlugin">
 
@@ -18,7 +16,7 @@
   </ion-nav-view>
 
   <script type="application/javascript" src="*ROOTRELATIVE*lib/ionic.bundle.min.js"></script>
-  <script type="application/javascript" src="*ROOTRELATIVE*lib/ows-wallet-pre.min.js"></script>
+  <script type="application/javascript" src="*ROOTRELATIVE*lib/ows-wallet-pre-*PLUGINKIND*.min.js"></script>
   <script type="application/javascript" src="js/plugin.js"></script>
   <script type="application/javascript" src="*ROOTRELATIVE*lib/ows-wallet-plugin-apis.js"></script>
 

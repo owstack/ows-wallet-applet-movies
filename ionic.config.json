@@ -1,5 +1,4 @@
  { 
-  "//": "Changes to this file will be overwritten, modify it at plugin-template/ only.", 
-  "name": "Starter",
+  "name": "OWS Wallet Plugin",
   "app_id": ""
 }
