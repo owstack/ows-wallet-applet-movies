@@ -1,14 +1,14 @@
 {
   "header": {
-    "id": "org.openwalletstack.wallet.plugin.applet.starter",
+    "id": "org.openwalletstack.wallet.plugin.applet.movies",
     "kind": "applet",
-    "name": "Starter",
-    "version": "0.0.29",
-    "description": "An OWS Wallet starter plugin.",
+    "name": "Movies!",
+    "version": "0.0.30",
+    "description": "An OWS Wallet sample plugin.",
     "author": "Open Wallet Stack",
     "url": {
       "marketing": "https://openwalletstack.org",
-      "support": "https://github.com/owstack/ows-wallet-plugin-starter/issues",
+      "support": "https://github.com/owstack/ows-wallet-plugin-movies/issues",
       "privacy": "https://openwalletstack.org/disclaimer",
       "terms": "https://openwalletstack.org/terms"
     }
@@ -16,10 +16,10 @@
   "permissions": {
     "delete": false
   },
-  "galleryImage": "<resource-0>",
-  "previewImage": "<resource-1>",
-  "iconImage": "<resource-2>",
-  "splashImage": "<resource-3>",
+  "galleryImage": "<plugin-path>/img/gallery.png",
+  "previewImage": "<plugin-path>/img/preview.png",
+  "iconImage": "<plugin-path>/img/icon.png",
+  "splashImage": "<plugin-path>/img/splash.png",
   "store": {
     "id": "0",
     "rating": "4+",
@@ -37,12 +37,6 @@
       "applet"
     ]
   },
-  "resources": [
-    "<plugin-path>/img/gallery.png",
-    "<plugin-path>/img/preview.png",
-    "<plugin-path>/img/icon.png",
-    "<plugin-path>/img/splash.png"
-  ],
   "skins": {
     "default": {
       "default": true
@@ -51,7 +45,7 @@
   "dependencies": {
     "org.openwalletstack.wallet.plugin.servlet.bitpay": {
       "package": {
-        "@owstack/ows-wallet-servlet-bitpay": "^0.0.11"
+        "@owstack/ows-wallet-servlet-bitpay": "^0.0.13"
       },
       "options": {
         "startMode": "auto"

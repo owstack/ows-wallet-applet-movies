@@ -3,20 +3,21 @@
     "name": "default",
     "id": "default",
     "kind": "applet",
-    "description": "A Starter applet skin.",
+    "description": "A sample applet skin.",
     "author": "Open Wallet Stack",
     "version": "0.0.1",
     "url": {
       "marketing": "https://openwalletstack.org/",
       "support": "https://github.com/owstack/ows-wallet/issues/new",
-      "privacy": "https://openwalletstack.org/disclaimer"
+      "privacy": "https://openwalletstack.org/disclaimer",
+      "terms": "https://openwalletstack.org/terms"
     }
   },
   "permissions": {
     "delete": false
   },
-  "galleryImage": "<resource-0>",
-  "previewImage": "<resource-1>",
+  "galleryImage": "<skin-path>/img/gallery.png",
+  "previewImage": "<skin-path>/img/preview.png",
   "store": {
     "id": "0",
     "rating": "4+",
@@ -32,9 +33,5 @@
       "ows",
       "skin"
     ]
-  },
-  "resources": [
-    "<skin-path>/img/gallery.png",
-    "<skin-path>/img/preview.png"
-  ]
+  }
 }

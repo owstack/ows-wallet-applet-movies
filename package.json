@@ -1,8 +1,8 @@
 {
-  "name": "@owstack/ows-wallet-plugin-starter",
-  "title": "Starter",
-  "version": "0.0.29",
-  "description": "An OWS Wallet starter plugin.",
+  "name": "@owstack/ows-wallet-plugin-movies",
+  "title": "Movies!",
+  "version": "0.0.30",
+  "description": "An OWS Wallet sample plugin.",
   "author": "Open Wallet Stack",
   "keywords": [
     "ows",
@@ -14,14 +14,14 @@
   "homepage": "https://openwalletstack.org",
   "license": "MIT",
   "repository": {
-    "url": "git://github.com/owstack/ows-wallet-plugin-starter.git",
+    "url": "git://github.com/owstack/ows-wallet-plugin-movies.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/owstack/ows-wallet-plugin-starter/issues"
+    "url": "https://github.com/owstack/ows-wallet-plugin-movies/issues"
   },
   "dependencies": {
-    "@owstack/ows-wallet-plugin-client": "^0.0.32"
+    "@owstack/ows-wallet-plugin-client": "^0.0.33"
   },
   "scripts": {
     "start": "npm run build:www && ionic serve --no-livereload --nogulp -s --address 0.0.0.0",

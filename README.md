@@ -1,11 +1,14 @@
-OWS Wallet Applet Plugin - Starter
+OWS Wallet Applet Plugin - Movies!
 =======
 
-A minimal OWS Wallet applet plugin to get you started on your own applet plugin.
+A sample OWS Wallet applet plugin to get you started on your own applet plugin.
 
 ## Main Features
 
-- None, really.
+- Navigate between view.
+- Minimal movie purchase process.
+- Includes a settings view with access to session log.
+- Uses the [BitPay servlet plugin](https://github.com/owstack/ows-wallet-plugin-bitpay).
 
 ## Installation
 
@@ -20,9 +23,7 @@ npm install -g grunt-cli
 
 ```sh
 sudo gem install sass
-npm run apply
-grunt
-npm start
+grunt dev
 ```
 
 Visit [`localhost:8100`](http://localhost:8100/) to view the plugin.
@@ -31,17 +32,16 @@ Visit [`localhost:8100`](http://localhost:8100/) to view the plugin.
 
 ```sh
 sudo gem install sass
-npm run apply
-grunt release
+grunt
 ```
 
 The release/ directory contains the content consumed by the OWS Wallet and must be checked in.
 
 ## Support
 
-* [GitHub Issues](https://github.com/owstack/ows-wallet-plugin-starter/issues)
+* [GitHub Issues](https://github.com/owstack/ows-wallet-plugin-movies/issues)
   * Open an issue if you are having problems with this project
 
 ## License
 
-This plugin is released under the MIT License.  Please refer to the [LICENSE](https://github.com/owstack/ows-wallet-plugin-starter/blob/master/LICENSE) file that accompanies this project for more information including complete terms and conditions.
+This plugin is released under the MIT License.  Please refer to the [LICENSE](https://github.com/owstack/ows-wallet-plugin-movies/blob/master/LICENSE) file that accompanies this project for more information including complete terms and conditions.

@@ -25,11 +25,11 @@ angular.module('owsWalletPlugin').config(function($stateProvider) {
     });
 
 })
-.run(function($rootScope, $state, $log, starterService) {
+.run(function($rootScope, $state, $log, movieService) {
 
   owswallet.Plugin.ready(function() {
 
-    starterService.init(function() {
+    movieService.init(function() {
       $state.go('home');
     });
 
