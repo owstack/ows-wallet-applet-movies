@@ -17,7 +17,6 @@ angular.module('owsWalletPlugin.controllers').controller('SessionLogCtrl', funct
 
   $scope.prepareLogs = function() {
     var log = pluginId + ' session logs\n Be careful, this could contain sensitive private data.\n\n';
-    log += '\n\n';
     log += historicLogService.get().map(function(v) {
       return '[' + v.timestamp + '][' + v.level + ']' + v.msg;
     }).join('\n');

@@ -14,10 +14,10 @@
   #session-log .log-entry .log-level {
     font-weight: bold; }
   #session-log .log-entry .debug {
-    color: #ffffff; }
+    color: #444444; }
   #session-log .log-entry .info {
-    color: #00afff; }
+    color: #0000ff; }
   #session-log .log-entry .warning {
     color: #ffa500; }
   #session-log .log-entry .error {
-    color: #ff473a; }
+    color: #ff0000; }
