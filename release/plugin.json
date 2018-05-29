@@ -1,5 +1,4 @@
 {
-  "//": "Changes to this file will be overwritten, modify it at plugin-template/ only.",
   "header": {
     "id": "org.openwalletstack.wallet.plugin.applet.starter",
     "kind": "applet",
@@ -10,7 +9,8 @@
     "url": {
       "marketing": "https://openwalletstack.org",
       "support": "https://github.com/owstack/ows-wallet-plugin-starter/issues",
-      "privacy": "https://openwalletstack.org/disclaimer"
+      "privacy": "https://openwalletstack.org/disclaimer",
+      "terms": "https://openwalletstack.org/terms"
     }
   },
   "permissions": {

@@ -1,10 +1,23 @@
 /*
  * Plugin variables
  */
-/*
- * Distribution SCSS overrides
- *
- * See plugin/shared/sass/variable.scss for variables that can be overriden with definitions in this file.
- */
 #detail .button-buy {
   float: right; }
+
+#session-log .log-entry {
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 18px;
+  border: none; }
+  #session-log .log-entry .log-timestamp {
+    font-weight: bold; }
+  #session-log .log-entry .log-level {
+    font-weight: bold; }
+  #session-log .log-entry .debug {
+    color: #ffffff; }
+  #session-log .log-entry .info {
+    color: #00afff; }
+  #session-log .log-entry .warning {
+    color: #ffa500; }
+  #session-log .log-entry .error {
+    color: #ff473a; }

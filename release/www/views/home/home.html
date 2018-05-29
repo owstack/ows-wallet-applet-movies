@@ -1,10 +1,13 @@
 <ion-view id="home">
   <ion-nav-bar class="bar bar-dark">
     <ion-nav-title>{{appletName}}</ion-nav-title>
+    <ion-nav-buttons side="secondary">
+      <button class="button button-icon icon ion-gear-a" ui-sref="settings"></button>
+    </ion-nav-buttons>
   </ion-nav-bar>
   <ion-content>
     <ion-list>
-      <div class="item item-divider">
+      <div class="item item-divider" translate>
         All Movies
       </div>
       <a class="item item-thumbnail-left item-icon-right" ui-sref="detail({id: movie.id})" ng-repeat="movie in movies">

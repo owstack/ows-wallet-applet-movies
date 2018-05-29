@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('owsWalletPlugin.services').service('starterService', function ($rootScope, pLog, Session) {
+angular.module('owsWalletPlugin.services').service('starterService', function ($rootScope, $log, Session) {
 
   var root = {};
   var SESSION_KEY_DATA = 'data';
@@ -33,7 +33,7 @@ angular.module('owsWalletPlugin.services').service('starterService', function ($
     session.get(SESSION_KEY_DATA).then(function(value) {
       cb(null, value);
     }).catch(function(error) {
-      pLog.error("Failed to read preferences: " + error.message + ' (' + error.statusCode + ')');
+      $log.error("Failed to read preferences: " + error.message + ' (' + error.statusCode + ')');
       cb(error);
     });
   };

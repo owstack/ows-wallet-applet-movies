@@ -1,0 +1,26 @@
+<ion-view id="session-log">
+  <ion-nav-bar class="bar bar-dark">
+    <ion-nav-title>{{'Session Log' | translate}}</ion-nav-title>
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content>
+    <div ng-show="filteredLogs.length == 0" translate>
+      No Entries For this log level. Adjust setting in app at Settings > About > Session Log.
+    </div>
+    <ion-list ng-show="filteredLogs.length > 0">
+      <ion-item class="item-text-wrap enable_text_select log-entry">
+        <ul ng-show="filteredLogs.length > 0">
+          <li ng-repeat="l in filteredLogs">
+            <span ng-class="{'warning': l.level=='warn', 'debug': l.level=='debug', 'info': l.level=='info', 'error': l.level=='error'}">
+              <span class="log-timestamp">[{{l.timestamp}}]</span>
+              <span class="log-level">[{{l.level}}]</span>
+              <span class="log-client" ng-if="!isCordova">[{{pluginName}}]</span>
+              {{l.msg}}
+            </span>
+          </li>
+        </ul>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

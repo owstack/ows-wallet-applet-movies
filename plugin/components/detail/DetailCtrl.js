@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, pLog, movieService, BitPay, Session, Transaction, popupService) {
+angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, $log, movieService, BitPay, Session, Transaction, popupService) {
 
   var bitpay = new BitPay('movieStore');
 
@@ -17,7 +17,7 @@ angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function(
   $scope.buy = function(movieId) {
     Session.getInstance().chooseWallet().then(function(wallet) {
       if (!wallet) {
-        pLog.info('User canceled');
+        $log.info('User canceled');
         return;
       }
 
@@ -25,7 +25,7 @@ angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function(
       doBuy(movie, wallet);
 
     }).catch(function(error) {
-      pLog.error('Could not choose a wallet: ' + JSON.stringify(error));
+      $log.error('Could not choose a wallet: ' + JSON.stringify(error));
     });
   };
 
@@ -36,10 +36,10 @@ angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function(
     };
 
     bitpay.sendPayment(wallet, payment, confirmHandler).then(function() {
-      pLog.debug('Payment sent');
+      $log.debug('Payment sent');
 
     }).catch(function(error) {
-      pLog.error('Could not create payment request: ' + error.message);
+      $log.error('Could not create payment request: ' + error.message);
 
       var title = 'Oops! Our Fault';
       var message = 'We are unable to process your purchase at this time. Please try again later.';

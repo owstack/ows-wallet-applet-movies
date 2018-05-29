@@ -18,6 +18,9 @@
 		      <a href="#" class="subdued">{{movie.likeCount}} Likes</a>
 		      <a href="#" class="subdued">{{movie.commentCount}} Comments</a>
 		    </p>
+		    <p class="left">
+		      Price: {{movie.price.amount.toFixed(2)}}
+		    </p>
 				<button class="button button-dark button-buy" ng-click="buy(movie.id)" ng-disabled="buyDisabled">
 				  Buy Now
 				</button>

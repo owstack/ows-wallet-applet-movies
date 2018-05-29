@@ -12,10 +12,20 @@ angular.module('owsWalletPlugin').config(function($stateProvider) {
       url: '/detail/:id',
       controller: 'DetailCtrl',
 	    templateUrl: 'views/detail/detail.html'
+    })
+    .state('settings', {
+      url: '/settings',
+      controller: 'SettingsCtrl',
+      templateUrl: 'views/settings/settings.html'
+    })
+    .state('sessionLog', {
+      url: '/session-log',
+      controller: 'SessionLogCtrl',
+      templateUrl: 'views/settings/session-log/session-log.html'
     });
 
 })
-.run(function($rootScope, $state, pLog, starterService) {
+.run(function($rootScope, $state, $log, starterService) {
 
   owswallet.Plugin.ready(function() {
 
@@ -26,7 +36,7 @@ angular.module('owsWalletPlugin').config(function($stateProvider) {
   });
 
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-    pLog.debug('Applet route change start from:', fromState.name || '-', ' to:', toState.name);
+    $log.debug('Applet route change start from:', fromState.name || '-', ' to:', toState.name);
   });
 
 });

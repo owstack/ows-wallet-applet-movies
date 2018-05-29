@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('owsWalletPlugin.services').service('movieService', function (pLog, lodash) {
+angular.module('owsWalletPlugin.services').service('movieService', function (lodash) {
 
   var root = {};
 

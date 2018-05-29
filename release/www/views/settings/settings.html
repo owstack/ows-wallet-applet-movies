@@ -1,0 +1,23 @@
+<ion-view id="session-log">
+  <ion-nav-bar class="bar bar-dark">
+    <ion-nav-title>{{'Settings' | translate}}</ion-nav-title>
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content>
+		<ul class="list">
+      <div class="item item-divider"></div>
+			<div class="item">
+		    {{'Version' | translate}}
+		    <span class="item-note">
+		    	{{version}}
+		    </span>
+		  </div>
+			<div class="item item-button-right" ui-sref="sessionLog" translate>
+		    Session Log
+				<i class="icon ion-ios-arrow-right"></i>
+		    </button>
+		  </div>
+		</ul>
+  </ion-content>
+</ion-view>
