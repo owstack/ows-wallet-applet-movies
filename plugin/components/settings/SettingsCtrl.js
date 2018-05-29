@@ -47,7 +47,7 @@ angular.module('owsWalletPlugin.controllers').controller('SettingsCtrl', functio
 
   $scope.git = {
     itemName: gettextCatalog.getString('Commit Hash'),
-    title: gettextCatalog.getString('View Terms of Use'),
+    title: gettextCatalog.getString('View GitHub Project'),
     message: gettextCatalog.getString('You can see the latest developments and contribute to this open source app by visiting our project on GitHub.'),
     okText: gettextCatalog.getString('Open GitHub'),
     cancelText: gettextCatalog.getString('Go Back'),
