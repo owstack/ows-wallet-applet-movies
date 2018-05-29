@@ -1,0 +1,15 @@
+/**
+ * SASS shared across applet
+ */
+
+ion-content {
+	background: $v-content-bg;
+}
+
+.item-divider {
+	background: $v-item-divider-bg;
+}
+
+i.icon {
+	color: $v-item-icon-color;
+}

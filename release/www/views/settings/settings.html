@@ -13,10 +13,28 @@
 		    	{{version}}
 		    </span>
 		  </div>
-			<div class="item item-button-right" ui-sref="sessionLog" translate>
+			<div class="item item-icon-left item-icon-right" ng-click="openExternalLink(git)">
+        <i class="icon" ng-class="git.icon"></i>
+        <span>
+          {{git.itemName}}
+        </span>
+		    <span class="item-note">
+		    	{{commitHash}}
+		    </span>
+				<i class="icon ion-ios-arrow-right"></i>
+		  </div>
+      <div class="item item-divider"></div>
+			<div class="item item-icon-right" ng-class="{'item-icon-left': get(link).icon}" ng-click="openExternalLink(externalLinks[link])" ng-repeat="link in links">
+        <i class="icon" ng-class="get(link).icon"></i>
+        <span>
+          {{externalLinks[link].itemName}}
+        </span>
+				<i class="icon ion-ios-arrow-right"></i>
+		  </div>
+      <div class="item item-divider"></div>
+			<div class="item item-icon-right" ui-sref="sessionLog" translate>
 		    Session Log
 				<i class="icon ion-ios-arrow-right"></i>
-		    </button>
 		  </div>
 		</ul>
   </ion-content>

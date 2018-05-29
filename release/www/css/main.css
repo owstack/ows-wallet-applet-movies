@@ -4,6 +4,18 @@
 /**
  * Plugin variables
  */
+/**
+ * SASS shared across applet
+ */
+ion-content {
+  background: #e0e0e0; }
+
+.item-divider {
+  background: transparent; }
+
+i.icon {
+  color: #aaaaaa; }
+
 #detail .button-buy {
   float: right; }
 

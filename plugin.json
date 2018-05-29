@@ -10,8 +10,10 @@
       "marketing": "https://openwalletstack.org",
       "support": "https://github.com/owstack/ows-wallet-plugin-movies/issues",
       "privacy": "https://openwalletstack.org/disclaimer",
-      "terms": "https://openwalletstack.org/terms"
-    }
+      "terms": "https://openwalletstack.org/terms",
+      "git": "https://github.com/owstack/ows-wallet-plugin-movies/"
+    },
+    "commitHash": "a76ec97"
   },
   "permissions": {
     "delete": false
@@ -68,5 +70,6 @@
         }
       }
     }
-  }
+  },
+  "commitHash": "a76ec97"
 }
