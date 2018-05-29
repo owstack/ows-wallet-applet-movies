@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('owsWalletPlugin.services').service('movieService', function (lodash) {
+angular.module('owsWalletPlugin.services').service('movieService', function ($rootScope, lodash, Session) {
 
   var root = {};
 
@@ -49,7 +49,7 @@ angular.module('owsWalletPlugin.services').service('movieService', function (lod
   // is destroyed.  When this event is received we update our session data. Before the plugin session is destroyed
   // the session will write it's data to persistent storage. Next time this plugin runs the session data will be restored.
   $rootScope.$on('$pre.beforeLeave', function(event, applet) {
-    saveData();
+    root.saveData();
   });
 
   // Our persistent datastore.

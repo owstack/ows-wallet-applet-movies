@@ -1,7 +1,7 @@
 {
   "name": "@owstack/ows-wallet-plugin-movies",
   "title": "Movies!",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "An OWS Wallet sample plugin.",
   "author": "Open Wallet Stack",
   "keywords": [
