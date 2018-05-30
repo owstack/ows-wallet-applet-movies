@@ -1,17 +1,17 @@
 'use strict';
 
-angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, $log, movieService, BitPay, Session, Transaction, popupService) {
+angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, $log, $timeout, movieService, BitPay, Session, popupService) {
 
   var bitpay = new BitPay('movieStore');
 
-  owswallet.Plugin.openForBusiness(BitPay.pluginId, function() {
-    // The BitPay servlet is ready, user can now buy movies!
-    $scope.buyDiabled = false;
-  });
-
   $scope.$on("$ionicView.beforeEnter", function(event, data) {
-    $scope.buyDiabled = true;
+    $scope.buyDisabled = true;
     $scope.movie = movieService.getMovie(data.stateParams.id);
+
+    owswallet.Plugin.openForBusiness(BitPay.pluginId, function() {
+      // The BitPay servlet is ready, user can now buy movies!
+      $scope.buyDisabled = false;
+    });
   });
 
   $scope.buy = function(movieId) {
