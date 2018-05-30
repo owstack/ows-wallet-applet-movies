@@ -1,7 +1,7 @@
 {
-  "name": "@owstack/ows-wallet-plugin-movies",
+  "name": "@owstack/ows-wallet-applet-movies",
   "title": "Movies!",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "An OWS Wallet sample plugin.",
   "author": "Open Wallet Stack",
   "keywords": [
@@ -14,11 +14,11 @@
   "homepage": "https://openwalletstack.org",
   "license": "MIT",
   "repository": {
-    "url": "git://github.com/owstack/ows-wallet-plugin-movies.git",
+    "url": "git://github.com/owstack/ows-wallet-applet-movies.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/owstack/ows-wallet-plugin-movies/issues"
+    "url": "https://github.com/owstack/ows-wallet-applet-movies/issues"
   },
   "dependencies": {
     "@owstack/ows-wallet-plugin-client": "^0.0.34"
