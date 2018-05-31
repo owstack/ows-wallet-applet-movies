@@ -3,7 +3,7 @@
     "id": "org.openwalletstack.wallet.plugin.applet.movies",
     "kind": "applet",
     "name": "Movies!",
-    "version": "0.0.36",
+    "version": "0.0.37",
     "description": "An OWS Wallet sample plugin.",
     "author": "Open Wallet Stack",
     "url": {
@@ -13,7 +13,7 @@
       "terms": "https://openwalletstack.org/terms",
       "git": "https://github.com/owstack/ows-wallet-applet-movies/"
     },
-    "commitHash": "2548b5c"
+    "commitHash": "638a592"
   },
   "permissions": {
     "delete": false
@@ -47,7 +47,7 @@
   "dependencies": {
     "org.openwalletstack.wallet.plugin.servlet.bitpay": {
       "package": {
-        "@owstack/ows-wallet-servlet-bitpay": "^0.0.16"
+        "@owstack/ows-wallet-servlet-bitpay": "^0.0.17"
       },
       "options": {
         "startMode": "auto"
