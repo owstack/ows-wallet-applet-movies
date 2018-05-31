@@ -1,7 +1,7 @@
 {
   "name": "@owstack/ows-wallet-applet-movies",
   "title": "Movies!",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "An OWS Wallet sample plugin.",
   "author": "Open Wallet Stack",
   "keywords": [
@@ -21,7 +21,7 @@
     "url": "https://github.com/owstack/ows-wallet-applet-movies/issues"
   },
   "dependencies": {
-    "@owstack/ows-wallet-plugin-client": "^0.0.34"
+    "@owstack/ows-wallet-plugin-client": "^0.0.35"
   },
   "scripts": {
     "start": "npm run build:www && ionic serve --no-livereload --nogulp -s --address 0.0.0.0",
