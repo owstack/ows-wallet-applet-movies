@@ -13,7 +13,7 @@
       "terms": "https://openwalletstack.org/terms",
       "git": "https://github.com/owstack/ows-wallet-applet-movies/"
     },
-    "commitHash": "638a592"
+    "commitHash": "7001725"
   },
   "permissions": {
     "delete": false

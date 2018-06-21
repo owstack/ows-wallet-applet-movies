@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, $log, $timeout, movieService, BitPay, Session, popupService) {
+angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, $log, $timeout, movieService, BitPay, BitPayServlet, Session, popupService) {
 
   var bitpay = new BitPay('movieStore');
 
@@ -8,7 +8,7 @@ angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function(
     $scope.buyDisabled = true;
     $scope.movie = movieService.getMovie(data.stateParams.id);
 
-    owswallet.Plugin.openForBusiness(BitPay.pluginId, function() {
+    owswallet.Plugin.openForBusiness(BitPayServlet.id, function() {
       // The BitPay servlet is ready, user can now buy movies!
       $scope.buyDisabled = false;
     });
