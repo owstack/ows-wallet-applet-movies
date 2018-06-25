@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('owsWalletPlugin.controllers').controller('SettingsCtrl', function($scope, Session, externalLinkService, gettextCatalog) {
+angular.module('owsWalletPlugin.controllers').controller('SettingsCtrl', function($scope, externalLinkService, gettextCatalog,
+  /* @namespace owsWalletPluginClient.api */ Session) {
 
   var session = Session.getInstance();
   $scope.version = session.plugin.header.version;

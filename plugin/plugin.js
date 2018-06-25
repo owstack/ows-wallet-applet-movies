@@ -5,11 +5,10 @@ angular.module('owsWalletPlugin', [
 	'ionic',
 	'ngLodash',
 	'owsWalletPluginClient',
-  'owsWalletPlugin.api',
+  'owsWalletPlugin.api.bitpay',
   'owsWalletPlugin.controllers',
   'owsWalletPlugin.services'
 ]);
 
-angular.module('owsWalletPlugin.api', []);
 angular.module('owsWalletPlugin.controllers', []);
 angular.module('owsWalletPlugin.services', []);

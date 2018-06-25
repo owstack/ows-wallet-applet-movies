@@ -1,6 +1,9 @@
 'use strict';
 
-angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, $log, $timeout, movieService, BitPay, BitPayServlet, Session, popupService) {
+angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function($scope, $log, $timeout, movieService, popupService,
+  /* @namespace owsWalletPlugin.api.bitpay */ BitPay,
+  /* @namespace owsWalletPlugin.api.bitpay */ BitPayServlet,
+  /* @namespace owsWalletPluginClient.api */ Session) {
 
   var bitpay = new BitPay('movieStore');
 
@@ -39,7 +42,7 @@ angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function(
       $log.debug('Payment sent');
 
     }).catch(function(error) {
-      $log.error('Could not create payment request: ' + error.message);
+      $log.error('Could not send payment. ' + error.message);
 
       var title = 'Oops! Our Fault';
       var message = 'We are unable to process your purchase at this time. Please try again later.';

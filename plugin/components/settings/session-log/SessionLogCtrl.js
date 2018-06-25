@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('owsWalletPlugin.controllers').controller('SessionLogCtrl', function($scope, historicLogService, lodash, gettextCatalog, Session) {
+angular.module('owsWalletPlugin.controllers').controller('SessionLogCtrl', function($scope, historicLogService, lodash, gettextCatalog,
+  /* @namespace owsWalletPluginClient.api */ Session) {
 
   var session = Session.getInstance();
   var pluginId = session.plugin.header.id + '@' + session.plugin.header.version;

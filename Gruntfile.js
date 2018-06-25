@@ -92,9 +92,21 @@ module.exports = function(grunt) {
       },
       plugin_api_js: {
         src: [
-          'plugin/api/*.js'
+          'plugin/api/api.module.js',
+          'plugin/api/public/**/*.js'
         ],
         dest: 'api/api.js'
+      },
+    },
+    ngAnnotate: {
+      options: {
+        singleQuotes: true
+      },
+      api: {
+        files: {
+          'www/js/plugin.js': 'www/js/plugin.js',
+          'api/api.js': 'api/api.js'
+        },
       },
     },
     nggettext_extract: {
@@ -157,6 +169,13 @@ module.exports = function(grunt) {
         src: '**/*',
         dest: 'www/img/'
       },
+      plugin_fonts: {
+        expand: true,
+        flatten: false,
+        cwd: 'plugin/assets/fonts',
+        src: '**/*',
+        dest: 'www/fonts/'
+      },
       plugin_skins: {
         expand: true,
         flatten: false,
@@ -166,6 +185,12 @@ module.exports = function(grunt) {
           '!**/sass/**' // Don't bring sass files into the app
         ],
         dest: 'www/skins/'
+      },
+      ionic_fonts: {
+        expand: true,
+        flatten: true,
+        src: 'bower_components/ionic/release/fonts/ionicons.*',
+        dest: 'www/fonts/'
       },
       release: {
         expand: true,
@@ -199,12 +224,15 @@ module.exports = function(grunt) {
     'concat:plugin_js',
     'concat:plugin_api_js',
     'concat:plugin_css',
+    'ngAnnotate',
     'exec:build',
     'copy:plugin_index',
     'copy:plugin_views',
     'copy:plugin_shared',
     'copy:plugin_imgs',
+    'copy:plugin_fonts',
     'copy:plugin_skins',
+    'copy:ionic_fonts',
     'copy:release'
   ]);
 
