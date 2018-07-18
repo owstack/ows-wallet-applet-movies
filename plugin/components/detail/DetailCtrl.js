@@ -5,7 +5,7 @@ angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function(
   /* @namespace owsWalletPlugin.api.bitpay */ BitPayServlet,
   /* @namespace owsWalletPluginClient.api */ Session) {
 
-  var bitpay = new BitPay('movieStore');
+  var bitpay = new BitPay();
 
   $scope.$on("$ionicView.beforeEnter", function(event, data) {
     $scope.buyDisabled = true;
