@@ -8,7 +8,7 @@
  * SASS shared across applet
  */
 ion-content {
-  background: #e0e0e0; }
+  background: #f5f5f5; }
 
 .item-divider {
   background: transparent; }
@@ -18,21 +18,3 @@ i.icon {
 
 #detail .button-buy {
   float: right; }
-
-#session-log .log-entry {
-  font-family: monospace;
-  font-size: 12px;
-  line-height: 18px;
-  border: none; }
-  #session-log .log-entry .log-timestamp {
-    font-weight: bold; }
-  #session-log .log-entry .log-level {
-    font-weight: bold; }
-  #session-log .log-entry .debug {
-    color: #444444; }
-  #session-log .log-entry .info {
-    color: #0000ff; }
-  #session-log .log-entry .warning {
-    color: #ffa500; }
-  #session-log .log-entry .error {
-    color: #ff0000; }

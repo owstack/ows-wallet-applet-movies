@@ -20,7 +20,6 @@ angular.module('owsWalletPlugin').config(function($stateProvider) {
     })
     .state('sessionLog', {
       url: '/session-log',
-      controller: 'SessionLogCtrl',
       templateUrl: 'views/settings/session-log/session-log.html'
     });
 
