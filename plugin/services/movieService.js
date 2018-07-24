@@ -80,7 +80,7 @@ angular.module('owsWalletPlugin.services').service('movieService', function ($ro
 
   // Update the session with plugin data and write the session data to persistent storage.
   root.saveData = function() {
-    session.set(SESSION_KEY_DATA, data);
+    session.setValue(SESSION_KEY_DATA, data);
     session.flush();
   };
 
