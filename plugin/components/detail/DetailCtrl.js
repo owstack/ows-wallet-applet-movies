@@ -28,7 +28,8 @@ angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function(
       doBuy(movie, wallet);
 
     }).catch(function(error) {
-      $log.error('Could not choose a wallet: ' + JSON.stringify(error));
+      // Error logged
+
     });
   };
 
@@ -42,8 +43,6 @@ angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function(
       $log.debug('Payment sent');
 
     }).catch(function(error) {
-      $log.error('Could not send payment. ' + error.message);
-
       var title = 'Oops! Our Fault';
       var message = 'We are unable to process your purchase at this time. Please try again later.';
       popupService.showAlert(title, message);

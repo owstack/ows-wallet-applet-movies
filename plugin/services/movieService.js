@@ -70,10 +70,9 @@ angular.module('owsWalletPlugin.services').service('movieService', function ($ro
   // then the returned data will be empty.
   root.getData = function(cb) {
     cb = cb || function(){};
-    session.get(SESSION_KEY_DATA).then(function(value) {
+    session.getValue(SESSION_KEY_DATA).then(function(value) {
       cb(null, value);
     }).catch(function(error) {
-      $log.error("Failed to read preferences: " + error.message + ' (' + error.statusCode + ')');
       cb(error);
     });
   };
