@@ -3,7 +3,7 @@
     "id": "org.openwalletstack.wallet.plugin.applet.movies",
     "kind": "applet",
     "name": "Movies!",
-    "version": "0.0.42",
+    "version": "0.0.43",
     "description": "An OWS Wallet sample plugin.",
     "author": "Open Wallet Stack",
     "url": {
@@ -13,7 +13,7 @@
       "terms": "https://openwalletstack.org/terms",
       "git": "https://github.com/owstack/ows-wallet-applet-movies/"
     },
-    "commitHash": "331f5e0"
+    "commitHash": "af1507d"
   },
   "permissions": {
     "delete": false
