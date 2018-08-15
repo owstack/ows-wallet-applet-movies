@@ -18,7 +18,11 @@ angular.module('owsWalletPlugin.controllers').controller('DetailCtrl', function(
   });
 
   $scope.buy = function(movieId) {
-    Session.getInstance().chooseWallet().then(function(wallet) {
+    var filter = {
+      currencies: bitpay.getInvoiceCurrencies()
+    };
+
+    Session.getInstance().chooseWallet(filter).then(function(wallet) {
       if (!wallet) {
         $log.info('User canceled');
         return;
